@@ -1,0 +1,187 @@
+// =====================================================
+// 동래 푸르지오 에듀포레 - OFFICIAL PREMIUM UX SCRIPT
+// =====================================================
+
+(function () {
+  'use strict';
+
+  // DOM Elements
+  const header = document.getElementById('header');
+  const navToggle = document.getElementById('navToggle');
+  const mNav = document.getElementById('mNav');
+  const mNavLinks = document.querySelectorAll('.m-nav-link');
+  const quickCapsule = document.getElementById('quickCapsule');
+  const btnTop = document.getElementById('btnTop');
+  const urgencyBanner = document.getElementById('urgencyBanner');
+  const ubClose = document.getElementById('ubClose');
+
+  // =====================================================
+  // 1. SCROLL EVENTS (Header & Quick Menu)
+  // =====================================================
+  let lastScrollY = window.scrollY;
+
+  const handleScroll = () => {
+    const y = window.scrollY;
+
+    // Header Style change
+    if (y > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+
+    // Quick Capsule Visibility (Hide near top)
+    if (quickCapsule) {
+      if (y > 400) {
+        quickCapsule.style.transform = 'translateY(0)';
+        quickCapsule.style.opacity = '1';
+        quickCapsule.style.pointerEvents = 'auto';
+      } else {
+        quickCapsule.style.transform = 'translateY(150px)';
+        quickCapsule.style.opacity = '0';
+        quickCapsule.style.pointerEvents = 'none';
+      }
+    }
+
+    lastScrollY = y;
+  };
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  handleScroll(); // Init
+
+  // Top Button Event
+  if (btnTop) {
+    btnTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // =====================================================
+  // 2. MOBILE MENU FULLSCREEN OVERLAY
+  // =====================================================
+  if (navToggle && mNav) {
+    navToggle.addEventListener('click', () => {
+      mNav.classList.toggle('open');
+      const spans = navToggle.querySelectorAll('span');
+      const isOpen = mNav.classList.contains('open');
+
+      // X icon transform
+      spans[0].style.transform = isOpen ? 'rotate(45deg) translateY(6px) translateX(6px)' : '';
+      spans[1].style.opacity = isOpen ? '0' : '';
+      spans[2].style.transform = isOpen ? 'rotate(-45deg) translateY(-6px) translateX(6px)' : '';
+
+      // Header background lock when menu is open
+      if (isOpen) header.style.background = 'transparent';
+      else if (window.scrollY > 50) header.style.background = 'var(--prugio-dark)';
+    });
+
+    mNavLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mNav.classList.remove('open');
+        const spans = navToggle.querySelectorAll('span');
+        spans.forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
+        if (window.scrollY > 50) header.style.background = 'var(--prugio-dark)';
+      });
+    });
+  }
+
+  // =====================================================
+  // 3. URGENCY BANNER (D-Day Countdown)
+  // =====================================================
+  if (ubClose && urgencyBanner) {
+    ubClose.addEventListener('click', () => {
+      urgencyBanner.classList.add('hidden');
+    });
+  }
+
+  const ubDays = document.getElementById('ub-days');
+  const ubHours = document.getElementById('ub-hours');
+  const ubMins = document.getElementById('ub-mins');
+  const ubSecs = document.getElementById('ub-secs');
+
+  if (ubDays) {
+    const updateCountdown = () => {
+      const now = new Date();
+      // 내일 자정 기준 (예시 타이머)
+      const end = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 0, 0, 0);
+      const diff = end - now;
+
+      const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const m = Math.floor((diff / 1000 / 60) % 60);
+      const s = Math.floor((diff / 1000) % 60);
+
+      ubDays.textContent = d < 10 ? '0' + d : d;
+      ubHours.textContent = h < 10 ? '0' + h : h;
+      ubMins.textContent = m < 10 ? '0' + m : m;
+      ubSecs.textContent = s < 10 ? '0' + s : s;
+    };
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  }
+
+  // =====================================================
+  // 4. UNIT PLAN TABS (Official Format)
+  // =====================================================
+  const tabs = document.querySelectorAll('.utab');
+  const views = document.querySelectorAll('.uc-view');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      const targetId = 'unit-' + tab.getAttribute('data-unit');
+      views.forEach(v => {
+        v.classList.remove('active');
+        v.style.animation = 'none'; // reset animation
+      });
+
+      const targetView = document.getElementById(targetId);
+      if (targetView) {
+        targetView.classList.add('active');
+        targetView.style.animation = 'fadeIn 0.5s ease';
+      }
+    });
+  });
+
+  // =====================================================
+  // 5. OBSERVER REVEAL ANIMATIONS
+  // =====================================================
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+  revealEls.forEach(el => revealObserver.observe(el));
+
+  // =====================================================
+  // 6. FORM SUBMISSION ALERTS
+  // =====================================================
+  const officialForm = document.getElementById('officialForm');
+  if (officialForm) {
+    officialForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('regName').value.trim();
+      const phone = document.getElementById('regPhone').value.trim();
+      const agree = document.getElementById('regAgree').checked;
+
+      if (!name || !phone) {
+        alert('필수 입력 항목을 확인해 주세요.');
+        return;
+      }
+      if (!agree) {
+        alert('개인정보 수집 및 이용에 동의해야 합니다.');
+        return;
+      }
+
+      // Success
+      alert('관심고객 등록이 완료되었습니다.\n담당자가 확인 후 연락드리겠습니다.');
+      officialForm.reset();
+    });
+  }
+
+})();

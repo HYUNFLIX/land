@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>동래 푸르지오 에듀포레 | 공식 프리미엄 홍보관</title>
+  <meta name="description" content="부산 동래구 안락동 프리미엄 아파트 동래 푸르지오 에듀포레. 총 1,481세대 대단지. 선착순 동·호 지정계약중." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@300;400;600;700&display=swap"
+    rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ===================== URGENCY BANNER ===================== -->
+  <div class="urgency-banner" id="urgencyBanner">
+    <div class="ub-inner">
+      <span class="ub-fire">🔥</span>
+      <span class="ub-text">선착순 동·호 지정계약중! (마감 임박)</span>
+      <div class="ub-countdown" id="ubCountdown">
+        <div class="ub-unit"><span id="ub-days">00</span><small>일</small></div>
+        <div class="ub-sep">:</div>
+        <div class="ub-unit"><span id="ub-hours">00</span><small>시</small></div>
+        <div class="ub-sep">:</div>
+        <div class="ub-unit"><span id="ub-mins">00</span><small>분</small></div>
+        <div class="ub-sep">:</div>
+        <div class="ub-unit"><span id="ub-secs">00</span><small>초</small></div>
+      </div>
+      <a href="#contact" class="ub-cta">관심고객등록</a>
+    </div>
+    <button class="ub-close" id="ubClose" aria-label="닫기">✕</button>
+  </div>
+
+  <!-- ===================== HEADER / NAV (OFFICIAL STYLE) ===================== -->
+  <header class="header" id="header">
+    <div class="h-inner">
+      <div class="h-logo">
+        <span class="logo-prugio">PRUGIO</span>
+        <span class="logo-sub">동래 푸르지오 에듀포레</span>
+      </div>
+      <nav class="h-nav">
+        <a href="#overview">사업안내</a>
+        <a href="#types">평면정보</a>
+        <a href="#features">프리미엄</a>
+        <a href="#contact">분양안내</a>
+        <a href="#location">입지환경</a>
+      </nav>
+      <div class="h-util">
+        <div class="hu-badge">
+          <span class="icon">📅</span>
+          <span>선착순 동·호 지정계약중</span>
+        </div>
+        <a href="tel:051-000-0000" class="hu-phone">
+          <span class="icon">📞</span>
+          051-000-0000
+        </a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="메뉴">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <!-- Mobile Menu Overlay -->
+    <div class="m-nav" id="mNav">
+      <a href="#overview" class="m-nav-link">사업안내</a>
+      <a href="#types" class="m-nav-link">평면정보</a>
+      <a href="#features" class="m-nav-link">프리미엄</a>
+      <a href="#contact" class="m-nav-link">분양안내</a>
+      <a href="#location" class="m-nav-link">입지환경</a>
+      <a href="#contact" class="m-nav-link highlight">관심고객등록</a>
+    </div>
+  </header>
+
+  <!-- ===================== HERO (OFFICIAL STYLE) ===================== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <img src="images/hero_apartment.png" alt="투시도" class="hero-img" id="heroImg" />
+      <div class="hero-gradient"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-titles">
+        <h2 class="ht-main reveal">동래를 새롭게 대표하는<br>프리미엄 대단지</h2>
+        <div class="ht-line reveal delay-1"></div>
+        <p class="ht-sub reveal delay-2">동래 푸르지오 에듀포레</p>
+      </div>
+    </div>
+
+    <div class="hero-bottom-info">
+      <p class="hb-disclaimer">※ 상기 CG는 소비자의 이해를 돕기 위해 제작된 것으로 실제와 다를 수 있습니다.</p>
+    </div>
+
+    <!-- Official Style Scroll Indicator -->
+    <div class="scroll-down">
+      <div class="sd-line"></div>
+      <span class="sd-text">SCROLL DOWN</span>
+    </div>
+  </section>
+
+  <!-- ===================== BRAND INTRO (OFFICIAL STYLE FULL WIDTH) ===================== -->
+  <section class="section intro">
+    <div class="container container-narrow">
+      <h3 class="intro-title reveal">완벽한 삶을 위한 새로운 기준,<br>동래 푸르지오 에듀포레</h3>
+      <p class="intro-desc reveal delay-1">
+        변치 않는 가치를 담은 대우건설의 푸르지오가 동래의 중심에 옵니다.<br>
+        우수한 교육환경과 쾌적한 자연, 눈부신 미래가치까지 모두 누리는<br>
+        총 1,481세대 명품 대단지의 자부심을 먼저 소유하십시오.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== OVERVIEW (MINIMAL OFFICIAL) ===================== -->
+  <section class="section overview" id="overview">
+    <div class="container">
+      <div class="sec-header reveal">
+        <span class="sh-eng">PROJECT OVERVIEW</span>
+        <h2 class="sh-title">사업개요</h2>
+      </div>
+      <div class="ov-info line-grid reveal delay-1">
+        <div class="ov-item">
+          <dt>사업명</dt>
+          <dd>동래 푸르지오 에듀포레</dd>
+        </div>
+        <div class="ov-item">
+          <dt>대지위치</dt>
+          <dd>부산광역시 동래구 안락동 1230번지 일원</dd>
+        </div>
+        <div class="ov-item">
+          <dt>건축규모</dt>
+          <dd>지하 3층 ~ 지상 최고 38층, 12개 동</dd>
+        </div>
+        <div class="ov-item">
+          <dt>총 세대수</dt>
+          <dd>1,481세대 (일반분양 474세대)</dd>
+        </div>
+        <div class="ov-item">
+          <dt>주택형</dt>
+          <dd>전용 74㎡A, 76㎡A, 84㎡A, 84㎡A1</dd>
+        </div>
+        <div class="ov-item">
+          <dt>시공사</dt>
+          <dd>대우건설 (주)</dd>
+        </div>
+        <div class="ov-item">
+          <dt>입주예정</dt>
+          <dd>2030년 3월 예정</dd>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== UNIT INFO (OFFICIAL CIRCLE SELECTOR UI) ===================== -->
+  <section class="section unit-info" id="types">
+    <div class="container">
+      <div class="sec-header align-center reveal">
+        <span class="sh-eng">UNIT PLAN</span>
+        <h2 class="sh-title">평면정보</h2>
+        <p class="sh-desc">푸르지오만의 혁신적인 공간 설계로 여유로움을 선사합니다.</p>
+      </div>
+
+      <div class="unit-wrapper reveal delay-1">
+        <div class="unit-tabs">
+          <button class="utab active" data-unit="74">74㎡</button>
+          <button class="utab" data-unit="76">76㎡</button>
+          <button class="utab hot" data-unit="84a">84㎡A</button>
+          <button class="utab" data-unit="84a1">84㎡A1</button>
+        </div>
+
+        <div class="unit-content">
+          <div class="uc-view active" id="unit-74">
+            <div class="uc-img"><img src="images/floorplan_84.png" alt="74 평면도"></div>
+            <div class="uc-details">
+              <h4>74㎡ A Type</h4>
+              <p class="uc-desc">통풍과 채광이 우수한 실용적 공간 설계</p>
+              <ul class="uc-specs">
+                <li><span>최저 분양가</span> <strong>약 7억 300만원~</strong></li>
+                <li><span>확장비</span> 약 2,500만원</li>
+                <li><span>방/욕실</span> 3개 / 2개</li>
+              </ul>
+              <a href="#contact" class="uc-btn">이 타입 상담 신청하기</a>
+            </div>
+          </div>
+          <!-- 84A -->
+          <div class="uc-view" id="unit-84a">
+            <div class="uc-img"><img src="images/floorplan_84.png" alt="84A 평면도"></div>
+            <div class="uc-details">
+              <h4>84㎡ A Type <span class="badge-hot">베스트</span></h4>
+              <p class="uc-desc">여유로운 수납과 품격 있는 와이드 다이닝 (잔여세대 마감 임박)</p>
+              <ul class="uc-specs">
+                <li><span>최저 분양가</span> <strong>약 8억 2,900만원~</strong></li>
+                <li><span>확장비</span> 약 2,600만원</li>
+                <li><span>방/욕실</span> 4개 / 2개 (알파룸 포함)</li>
+              </ul>
+              <a href="#contact" class="uc-btn gold">관심고객 등록 (로열층 문의)</a>
+            </div>
+          </div>
+          <!-- 76 -->
+          <div class="uc-view" id="unit-76">
+            <div class="uc-img"><img src="images/floorplan_84.png" alt="76 평면도"></div>
+            <div class="uc-details">
+              <h4>76㎡ A Type</h4>
+              <p class="uc-desc">공간 활용도를 극대화한 합리적 평면</p>
+              <ul class="uc-specs">
+                <li><span>최저 분양가</span> <strong>약 7억 2,200만원~</strong></li>
+                <li><span>확장비</span> 약 2,500만원</li>
+                <li><span>방/욕실</span> 3개 / 2개</li>
+              </ul>
+              <a href="#contact" class="uc-btn">이 타입 상담 신청하기</a>
+            </div>
+          </div>
+          <!-- 84A1 -->
+          <div class="uc-view" id="unit-84a1">
+            <div class="uc-img"><img src="images/floorplan_84.png" alt="84A1 평면도"></div>
+            <div class="uc-details">
+              <h4>84㎡ A1 Type</h4>
+              <p class="uc-desc">채광과 조망이 우수한 맞통풍 판상형 구조</p>
+              <ul class="uc-specs">
+                <li><span>최저 분양가</span> <strong>약 7억 5,400만원~</strong></li>
+                <li><span>확장비</span> 약 2,600만원</li>
+                <li><span>방/욕실</span> 4개 / 2개 (알파룸 포함)</li>
+              </ul>
+              <a href="#contact" class="uc-btn">이 타입 상담 신청하기</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FEATURES (OFFICIAL STAGGERED LAYOUT) ===================== -->
+  <section class="section premium" id="features">
+    <div class="container">
+      <div class="sec-header reveal">
+        <span class="sh-eng">PREMIUM</span>
+        <h2 class="sh-title">입지 및 교육 프리미엄</h2>
+      </div>
+
+      <div class="pr-grid">
+        <div class="pr-item reveal">
+          <div class="pr-img-wrap"><img src="images/oncheoncheon_park.png" alt="온천천"></div>
+          <div class="pr-text">
+            <span>01</span>
+            <h3>자연을 품은 에코 힐링 단지</h3>
+            <p>온천천 시민공원과 다양한 수변 산책로,<br>수영강의 쾌적한 자연이 일상이 되는 힐링 포인트입니다.</p>
+          </div>
+        </div>
+        <div class="pr-item reverse reveal delay-1">
+          <div class="pr-img-wrap"><img src="images/community_amenity.png" alt="커뮤니티"></div>
+          <div class="pr-text">
+            <span>02</span>
+            <h3>단지와 맞닿은 초품아 학세권</h3>
+            <p>충렬초, 충렬중, 충렬고가 단지와 직접 연결되어<br>아이들이 안심하고 도보 통학할 수 있는 완벽한 교육환경을 자랑합니다.</p>
+          </div>
+        </div>
+        <div class="pr-item reveal delay-2">
+          <div class="pr-img-wrap"><img src="images/interior_living.png" alt="인테리어"></div>
+          <div class="pr-text">
+            <span>03</span>
+            <h3>하이엔드 라이프 커뮤니티</h3>
+            <p>피트니스, 골프클럽, 그리너리 라운지 등<br>1,481세대 대단지 스케일에 걸맞은 고품격 그리너리 라운지가 조성됩니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FULL WIDTH IMAGE DIVIDER ===================== -->
+  <section class="parallax-divider">
+    <div class="pd-bg" style="background-image: url('images/hero_apartment.png');"></div>
+    <div class="pd-overlay"></div>
+    <div class="pd-content reveal">
+      <h3>당신의 삶이 예술이 되는 곳</h3>
+      <p>동래의 자부심, 푸르지오가 완성합니다.</p>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT / REGISTRATION ===================== -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="contact-box reveal">
+        <div class="cb-left">
+          <span class="cb-label">관심고객 등록</span>
+          <h2>전문 상담사가<br>가장 빠르고 정확한<br>정보를 안내해 드립니다.</h2>
+          <p>잔여 동·호수 조회 및 모델하우스 방문을 예약하세요.</p>
+
+          <div class="cb-contact-info">
+            <span class="cb-icon">☎</span> <strong>051-000-0000</strong>
+          </div>
+        </div>
+        <div class="cb-right">
+          <form id="officialForm" class="off-form">
+            <div class="form-row">
+              <label for="regName">성명 *</label>
+              <input type="text" id="regName" placeholder="홍길동" required>
+            </div>
+            <div class="form-row">
+              <label for="regPhone">연락처 *</label>
+              <input type="tel" id="regPhone" placeholder="010-0000-0000" required>
+            </div>
+            <div class="form-row">
+              <label>관심 타입</label>
+              <div class="radio-group">
+                <label><input type="radio" name="regType" value="74" checked> <span>74㎡</span></label>
+                <label><input type="radio" name="regType" value="76"> <span>76㎡</span></label>
+                <label><input type="radio" name="regType" value="84"> <span>84㎡ (인기)</span></label>
+                <label><input type="radio" name="regType" value="etc"> <span>기타(미정)</span></label>
+              </div>
+            </div>
+            <div class="form-row agreement">
+              <label class="chk-label">
+                <input type="checkbox" id="regAgree" required>
+                <i></i> 개인정보 수집 및 이용 동의 (필수)
+              </label>
+            </div>
+            <button type="submit" class="btn-submit">등록하기</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== MAP LOCATION ===================== -->
+  <section class="section map-section" id="location">
+    <div class="container container-large">
+      <div class="sec-header reveal">
+        <span class="sh-eng">LOCATION</span>
+        <h2 class="sh-title">오시는 길</h2>
+      </div>
+      <div class="map-wrap reveal delay-1">
+        <iframe
+          src="https://maps.google.com/maps?q=%EB%B6%80%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C+%EB%8F%99%EB%9E%98%EA%B5%AC+%EC%95%88%EB%9D%BD%EB%8F%991230&output=embed&z=15"
+          width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+      </div>
+      <div class="map-info reveal delay-2">
+        <div class="mi-item">
+          <strong>현장 및 모델하우스</strong>
+          <p>부산광역시 동래구 안락동 1230번지 일원</p>
+        </div>
+        <div class="mi-item">
+          <strong>분양문의</strong>
+          <p>051-000-0000</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER (OFFICIAL STYLE) ===================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="f-top">
+        <span class="f-logo">PRUGIO</span>
+        <div class="f-links">
+          <a href="#">개인정보처리방침</a>
+          <a href="#">이용약관</a>
+          <a href="#">이메일무단수집거부</a>
+        </div>
+      </div>
+      <div class="f-info">
+        <p>시공 : 대우건설(주) &nbsp;|&nbsp; 현장/견본주택 : 부산광역시 동래구 안락동 1230번지 일원</p>
+        <p class="f-copy">Copyrightⓒ DAEWOO ENGINEERING & CONSTRUCTION CO., LTD. All rights reserved.</p>
+        <p class="f-notice">
+          ※ 본 홈페이지에 사용된 CG 및 이미지는 소비자의 이해를 돕기 위해 제작된 것으로, 실제와 다를 수 있습니다.<br>
+          ※ 개발 계획 및 교통망 등은 인허가 관청이나 국가 시책에 따라 변경될 수 있습니다.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== OFFICIAL STYLE CAPSULE QUICK MENU ===================== -->
+  <div class="quick-capsule" id="quickCapsule">
+    <a href="tel:051-000-0000" class="qc-item">
+      📞 <span class="qc-text">051) 000-0000</span>
+    </a>
+    <div class="qc-divider"></div>
+    <a href="#contact" class="qc-item">
+      📋 <span class="qc-text">관심고객등록</span>
+    </a>
+    <div class="qc-divider"></div>
+    <a href="#0" class="qc-item kakao">
+      💬
+    </a>
+    <button class="qc-item qc-top" id="btnTop">↑</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
