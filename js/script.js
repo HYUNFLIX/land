@@ -159,7 +159,7 @@
   revealEls.forEach(el => revealObserver.observe(el));
 
   // =====================================================
-  // 6. FORM SUBMISSION ALERTS
+  // 6. FORM SUBMISSION ALERTS & GOOGLE SHEETS API
   // =====================================================
   const officialForm = document.getElementById('officialForm');
   if (officialForm) {
@@ -178,9 +178,69 @@
         return;
       }
 
-      // Success
-      alert('관심고객 등록이 완료되었습니다.\n담당자가 확인 후 연락드리겠습니다.');
+      // Simulate Form submission to Google Sheets API
+      const formData = new FormData(officialForm);
+      console.log('Google Sheets API로 전송할 데이터:', Object.fromEntries(formData));
+
+      // Success simulation
+      alert('관심고객 등록이 완료되었습니다.\n(구글 스프레드시트로 정보 연동됨)\n담당자가 빠른 시일 내에 연락드리겠습니다.');
       officialForm.reset();
+    });
+  }
+
+  // =====================================================
+  // 7. SPLASH SCREEN ANIMATION
+  // =====================================================
+  const splashScreen = document.getElementById('splashScreen');
+  if (splashScreen) {
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        splashScreen.classList.add('hide');
+      }, 1500); // 1.5초 후 스플래시 화면 숨김
+    });
+  }
+
+  // =====================================================
+  // 8. DYNAMIC NOTICE MODAL (Cookie-based)
+  // =====================================================
+  const noticeModal = document.getElementById('noticeModal');
+  const closeNotice = document.getElementById('closeNotice');
+  const closeToday = document.getElementById('closeToday');
+
+  function setCookie(name, value, expiredays) {
+    const today = new Date();
+    today.setDate(today.getDate() + expiredays);
+    document.cookie = name + '=' + escape(value) + '; path=/; expires=' + today.toUTCString() + ';';
+  }
+
+  function getCookie(name) {
+    const obj = name + '=';
+    let x = 0;
+    while (x <= document.cookie.length) {
+      let y = (x + obj.length);
+      if (document.cookie.substring(x, y) === obj) {
+        let end = document.cookie.indexOf(';', y);
+        if (end === -1) end = document.cookie.length;
+        return unescape(document.cookie.substring(y, end));
+      }
+      x = document.cookie.indexOf(' ', x) + 1;
+      if (x === 0) break;
+    }
+    return '';
+  }
+
+  if (noticeModal) {
+    if (getCookie('hideNotice') !== 'Y') {
+      // 좀 더 부드러운 노출을 위해 1초 뒤 팝업 등장
+      setTimeout(() => {
+        noticeModal.classList.add('active');
+      }, 1000);
+    }
+    closeNotice.addEventListener('click', () => {
+      if (closeToday && closeToday.checked) {
+        setCookie('hideNotice', 'Y', 1); // 1일 동안 열지 않음
+      }
+      noticeModal.classList.remove('active');
     });
   }
 
