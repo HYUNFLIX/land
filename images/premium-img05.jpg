@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="euc-kr">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="naver-site-verification" content="e1587b9394b56b9a51fb28f53ccaeb1a308c4b18" />
+<meta property="description" content="The Natural Nobility, 푸르지오의 분양, 현장, 입주 안내 및 브랜드 콘텐츠">
+<meta name="viewport" content="width=1280">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="No-Cache">
+<meta property="og:title" content="푸르지오">
+<meta property="og:description" content="The Natural Nobility, 푸르지오의 분양, 현장, 입주 안내 및 브랜드 콘텐츠">
+<link href="/asset/css/common.css" rel="stylesheet">
+<link href="/asset/css/sub.css" rel="stylesheet">
+<link rel="shortcut icon" href="/asset/images/common/favicon.ico" />
+<meta property="og:image" content="http://www.prugio.com/asset/images/common/og_img.jpg"/>
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Person",
+    "name": "푸르지오",
+    "url": "http://www.prugio.com/",
+    "sameAs": [
+    "https://www.youtube.com/user/PRUGIOLIFE",
+    "https://www.instagram.com/prugiolife/",
+    "https://www.facebook.com/prugio"
+    ]
+}
+</script>
+<title>푸르지오</title>
+<style>
+#header h1{background:url(/error-page/images/logo_error.png) 0 0 no-repeat;}
+.gnb > li > a{color:#000;}
+#header .right .gnb_myprugio{color:#000;}
+#header .right .btn_gnb{background:url(/error-page/images/gnb_menu_ico_error.png) 0 0 no-repeat;}
+.contents{padding:300px 0 150px; min-height:350px;}
+.error{text-align:center;}
+.error h3{padding:50px 0 20px; font-weight:400; font-size:30px; color:#000; line-height:100%;}
+.error p{color:#666;}
+.error .btn_area{padding-top:45px;}
+.error .btn_area a{width:222px; background:#005151;}
+.error .btn_area a:first-child{width:141px; margin-right:7px; background:#5b6770;}
+</style>
+</head>
+<body>
+	<!-- wrap -->
+	<div id="wrap">
+		<!-- header -->
+		
+<div id="header">
+	<div class="inner">
+		<h1><a href="http://www.prugio.com/main.aspx"></a></h1>
+		<div class="depth1">
+			<ul id="gnb" class="gnb">
+				<li>
+					<a href="http://www.prugio.com/sale/sale.aspx">분양안내</a>
+				</li>
+				<li>
+					<a href="http://www.prugio.com/construction/construction.aspx">현장안내</a>
+				</li>
+				<li>
+					<a href="http://www.prugio.com/brand/pr-video.aspx">브랜드</a>
+				</li>
+				<li>
+					<a href="http://www.prugio.com/product/premium.aspx">상품안내</a>
+				</li>
+				<li>
+					<a href="http://www.prugio.com/life/life.aspx">라이프</a>
+				</li>
+			</ul>
+		</div>
+		<div class="right">
+			<div class="util">
+				
+					<a href="https://www.prugio.com/membership/login.aspx">로그인</a>
+                    <a href="https://www.prugio.com/membership/join-agreement.aspx">회원가입</a>
+				
+				<a href="http://www.prugio.com/customer/faq.aspx">고객센터</a>
+			</div>
+			<a href="http://www.prugio.com/myprugio/myprugio.aspx" class="gnb_myprugio">마이 푸르지오</a>
+			<a href="javascript:void(0)" id="gnbMenuBtn" class="btn_gnb"></a>
+		</div>
+		<div class="pnote">
+			<a href="javascript:void(0)" class="notification"><img src="/asset/images/common/new_pnote.png" alt="new" class="new" id="ico_new"></a>
+			<div class="pnote_view">
+				<div class="pnote_control">
+					<a href="javascript:void(0);" class="btn_list">전체 보기</a><a href="javascript:void(0);" class="close">닫기</a>
+				</div>
+				<ul>
+					<li style="width: 460px;"><a href="http://www.prugio.com/brand/news-view.aspx?idx=97176" class="link">대우건설, ‘한남2구역 주택재개발사업’ 시공사 선정</a></li>
+					<li style="width: 460px; background-position: 95% center;"><a href="http://www.prugio.com/brand/news-view.aspx?idx=97175" class="link">대우건설 컨소시엄, 1조 5,585억 규모 ‘수진1구역 재개발사업’ 시공사 선정</a></li>
+					<li style="width: 460px; background-position: 95% center;"><a href="http://www.prugio.com/brand/news-view.aspx?idx=97174" class="link">대우건설, 검단신도시 푸르지오 더베뉴에서 ‘발코니 음악회’ 개최</a></li>
+
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="gnb_bg">
+		<div class="gnb_cont">
+			<ul>
+				<li class="tit">분양안내</li>
+				<li><a href="http://www.prugio.com/sale/sale.aspx?menu=0">신규분양</a></li>
+				<li><a href="http://www.prugio.com/sale/sale.aspx?menu=1">추천분양</a></li>
+				<li><a href="http://www.prugio.com/sale/sale.aspx?menu=2">상가분양</a></li>
+				<li><a href="http://www.prugio.com/sale/sale.aspx?menu=3">지역주택조합</a></li>
+				<li><a href="http://www.prugio.com/sale/plan.aspx">분양계획 한눈에 보기</a></li>
+			</ul>
+			<ul>
+				<li class="tit">현장안내</li>
+				<li><a href="http://www.prugio.com/construction/construction.aspx">공사진행단지</a></li>
+					<li><a href="http://www.prugio.com/construction/construction.aspx?menu=Y">입주진행단지</a></li>
+			</ul>
+			<ul>
+				<li class="tit">브랜드</li>
+				<li><a href="http://www.prugio.com/brand/story.aspx">브랜드 스토리</a></li>
+				<li><a href="http://www.prugio.com/brand/bi.aspx">BI</a></li>
+				<li><a href="http://www.prugio.com/brand/news.aspx">푸르지오 소식</a></li>
+				<li><a href="http://www.prugio.com/brand/pr-video.aspx">브랜드 PR</a></li>
+				<li><a href="http://www.prugio.com/brand/award.aspx">수상경력</a></li>
+				<li><a href="http://www.prugio.com/brand/record.aspx">시공실적</a></li>
+				<li><a href="http://www.prugio.com/brand/2025edition.aspx">푸르지오 에디션 2025</a></li>
+			</ul>
+			<ul>
+				<li class="tit">상품안내</li>
+				<li><a href="http://www.prugio.com/product/premium.aspx">Be Premium</a></li>
+			</ul>
+			<ul>
+				<li class="tit">라이프</li>
+				<li><a href="http://www.prugio.com/life/life.aspx">영상 매거진</a></li>
+				<li><a href="http://www.prugio.com/life/gallery.aspx">갤러리</a></li>
+			</ul>
+			<ul class="myprugio">
+				<li class="tit">마이푸르지오</li>
+				<li><a href="https://www.prugio.com/myprugio/myprugio.aspx">나의 분양단지</a></li>
+				<li><a href="https://www.prugio.com/myprugio/my-qna.aspx">1:1 상담</a></li>
+				<li><a href="https://www.prugio.com/myprugio/my-as.aspx">A/S 신청</a></li>
+				<li><a href="https://www.prugio.com/myprugio/payment-guide.aspx">분양대금 조회</a></li>
+				<li><a href="https://www.prugio.com/myprugio/document-member.aspx">민원서류 신청</a></li>
+				<li><a href="https://www.prugio.com/myprugio/visit-reservation.aspx">내집 방문의 날 행사 예약</a></li>
+				<li><a href="https://www.prugio.com/myprugio/move-reservation.aspx">입주예약</a></li>
+				<!--<li><a href="https://www.prugio.com/myprugio/smartprugio.aspx">푸르지오 상담 APP</a></li>-->
+			</ul>
+		</div>
+	</div>
+</div>
+
+<!--<style>.main_popup {display:none !important;}body #header.pop_on{top:0px !important;}</style>-->
+<style>.pnote {display:none;}</style>
+
+		<!-- //header -->
+		<!-- container -->
+		<div id="container">
+			<div class="contents">
+				<div class="error">
+					<div><img src="/error-page/images/error_img.jpg" alt="" /></div>
+                    <h3>요청하신 페이지를 표시할 수 없습니다.</h3>
+                    <p>잘못된 경로로 접근하셨거나, 현재 운영되지 않는 페이지입니다.</p>
+                    <div class="btn_area">
+						<a href="javascript:history.back()" class="commonBtn">이전 페이지로</a>
+						<a href="/main.aspx" class="commonBtn">푸르지오 홈페이지 바로가기</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //container -->
+		<!-- footer -->
+		
+
+<div id="footer">
+	<div class="inner">
+		<a href="/main.aspx" class="footer_logo"><img src="../asset/images/common/logo_footer.png" alt="PRUGIO"></a>
+		<div class="center_cont">
+			<div class="footer_util">
+				<a href="http://www.prugio.com/membership/user-guidelines.aspx">이용약관</a>
+				<a href="http://www.prugio.com/membership/privacy-statement.aspx" style="font-weight: bold; color: #fff;">개인정보처리방침</a>
+				<a href="http://www.prugio.com/membership/email-security.aspx">이메일무단수집거부</a>
+			</div>
+			<address>
+				법인명 : (주)대우건설 서울특별시 중구 을지로 170 사업자 등록번호 : 104-81-58180<br><span>ⓒ PRUGIO All rights reserved.</span>
+			</address>
+		</div>
+		<div class="right_cont">
+			<!--
+			<div class="site_box">
+				<a href="javascript:void(0);" class="site_btn">패밀리 사이트</a>
+				<div class="inner_pop">
+					<ul>
+						<li><a href="http://www.daewooenc.com/default.asp" target="_blank" title="새창으로열기">대우건설</a></li>
+						<li><a href="https://www.daewoodanswer.com/" target="_blank" title="새창으로열기">D.Answer</a></li>
+						<li><a href="https://www.daewoodanswer.com/dongtan/" target="_blank" title="새창으로열기">동탄 행복마을 푸르지오</a></li>
+						<li><a href="http://www.prugios.com/" target="_blank" title="새창으로열기">푸르지오 서비스</a></li>
+						<li class="last">패밀리 사이트</li>
+					</ul>
+				</div>
+			</div>
+			-->
+			<div class="daewooenc_link">
+				<a href="http://www.daewooenc.com" target="_blank" title="대우건설 바로가기">DAEWOOENC</a>
+				<a href="https://www.prugiosummit.com" target="_blank" class="btn2" title="푸르지오 써밋 바로가기">PRUGIO_SUMMIT</a>
+			</div>
+			<p class="customer_tel">고객센터 1670-1000</p>
+			<ul class="sns_list">
+				<li class="sns_list1"><a href="https://www.youtube.com/user/PRUGIOLIFE"  target="_blank">youtube</a></li>
+				<li class="sns_list3"><a href="https://www.instagram.com/prugiolife/" target="_blank">instagram</a></li>
+				<li class="sns_list0" style="height: 24px;  position: relative; top: 14px;"><a href="http://pf.kakao.com/_lFzNxb" target="_blank" style="width: 29px; margin-left: 20px;"><img src="../asset/images/common/ch_img.jpg" alt="카카오채널"></a></li>
+				<!-- <li class="sns_list2"><a href="https://blog.naver.com/prugiolife" target="_blank">naver</a></li> 
+				<li class="sns_list4"><a href="https://www.facebook.com/prugio"  target="_blank">facebook</a></li>-->
+				<!-- <li class="sns_list5"><a href="https://story.kakao.com/ch/prugio"  target="_blank">kakao</a></li> -->
+			</ul>
+		</div>
+		<div class="icsi_logo">
+			<img src="../asset/images/common/footer_logo01.png" alt="" />
+			<img src="../asset/images/common/footer_logo02.png" alt="" />
+			<img src="../asset/images/common/footer_logo03.png" alt="" />
+			<img src="../asset/images/common/footer_logo04.png" alt="" />
+		</div>
+	</div>
+</div>
+<div class="popup">
+	<img src="../asset/images/main/main_popup.jpg" alt="" class="img_pc"/>
+	<div>
+		<a href="javascript:void(0);" class="btn_close">X 닫기</a>
+	</div>
+</div>
+<div class="popup3">
+	<img src="../asset/images/main/main_popup3.jpg" alt="" class="img_pc"/>
+	<div>
+		<a href="javascript:void(0);" class="btn_close btn_close3">X 닫기</a>
+	</div>
+</div>
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-53163152-1"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'UA-53163152-1');	
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-53163152-10"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-53163152-10');
+</script>
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9F9VEDTDFG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9F9VEDTDFG');
+</script>
+		<!-- //footer -->
+	</div>
+	<!-- //wrap -->
+<script src="/asset/js/jquery-1.11.0.min.js"></script>
+<script src="/asset/js/jquery-ui.min.js"></script>
+<script src="/asset/js/common.js"></script>
+<script>$('body').addClass('load');</script>
+<script>
+	var lnbName;
+	var lnbCustomer; //Customer ?쒕툕?섏씠吏???ъ슜 ??蹂??
+	var lnbMyprugio; //Myprugio ?쒕툕?쇱씠吏???ъ슜 ??蹂??
+    switch (lnbName) {
+        case "customer":
+            $("#lnb").children(".customer").addClass("on").find(".depth").children("li").eq(lnbCustomer - 1).addClass("on");
+            break;
+        case "myprugio":
+            $("#lnb").children(".myprugio").addClass("on").find(".depth").children("li").eq(lnbMyprugio - 1).addClass("on");
+            break;
+        case "prugio_guide":
+            $("#lnb").children(".prugio_guide").addClass("on").find(".depth").children("li").eq(lnbGuide - 1).addClass("on");
+            break;
+        default:
+            break;
+    };
+</script>
+
+</body>
+</html>
