@@ -197,14 +197,14 @@
       }
 
       const leadData = {
-        name: (officialForm.querySelector('[name="name"]') || officialForm.querySelector('#regName'))?.value || '',
-        phone: (officialForm.querySelector('[name="phone"]') || officialForm.querySelector('#regPhone'))?.value || '',
-        unitType: (officialForm.querySelector('[name="unitType"]') || officialForm.querySelector('#regUnit'))?.value || '',
-        message: (officialForm.querySelector('[name="message"]') || officialForm.querySelector('#regMsg'))?.value || '',
-        privacy: (officialForm.querySelector('[name="privacy"]') || officialForm.querySelector('#regPrivacy'))?.checked || false,
+        name: officialForm.querySelector('#regName')?.value?.trim() || '',
+        phone: officialForm.querySelector('#regPhone')?.value?.trim() || '',
+        unitType: officialForm.querySelector('[name="regType"]:checked')?.value || '',
+        privacy: officialForm.querySelector('#regAgree')?.checked || false,
         createdAt: firebase.firestore.FieldValue.serverTimestamp(),
         source: document.referrer || 'direct'
       };
+
 
       db.collection('leads').add(leadData)
         .then(() => {
