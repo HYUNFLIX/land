@@ -200,6 +200,7 @@
         name: officialForm.querySelector('#regName')?.value?.trim() || '',
         phone: officialForm.querySelector('#regPhone')?.value?.trim() || '',
         unitType: officialForm.querySelector('[name="regType"]:checked')?.value || '',
+        message: officialForm.querySelector('#regMsg')?.value?.trim() || '',
         privacy: officialForm.querySelector('#regAgree')?.checked || false,
         createdAt: firebase.firestore.FieldValue.serverTimestamp(),
         source: document.referrer || 'direct'
