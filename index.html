@@ -768,8 +768,13 @@
       </div>
       <div class="map-info reveal delay-2">
         <div class="mi-item">
-          <strong>현장 및 모델하우스</strong>
+          <strong>현장 주소</strong>
           <p>부산광역시 동래구 안락동 1230번지 일원</p>
+        </div>
+        <div class="mi-item">
+          <strong>견본주택 (모델하우스)</strong>
+          <p>부산광역시 해운대구 우동 1406-1</p>
+          <button class="btn-map-view" onclick="openMapModal()">현장 약도 보기</button>
         </div>
         <div class="mi-item">
           <strong>분양문의</strong>
@@ -791,7 +796,7 @@
         </div>
       </div>
       <div class="f-info">
-        <p>시공 : 대우건설(주) &nbsp;|&nbsp; 현장/견본주택 : 부산광역시 동래구 안락동 1230번지 일원</p>
+        <p>시공 : 대우건설(주) &nbsp;|&nbsp; 현장: 부산광역시 동래구 안락동 1230번지 일원 &nbsp;|&nbsp; 견본주택: 부산광역시 해운대구 우동 1406-1</p>
         <p class="f-copy">Copyrightⓒ DAEWOO ENGINEERING & CONSTRUCTION CO., LTD. All rights reserved.</p>
         <p class="f-notice">
           ※ 본 홈페이지에 사용된 CG 및 이미지는 소비자의 이해를 돕기 위해 제작된 것으로, 실제와 다를 수 있습니다.<br>
@@ -889,7 +894,24 @@
     })();
   </script>
 
+  <!-- ===================== MAP MODAL ===================== -->
+  <div class="map-modal" id="mapModal">
+    <div class="map-modal-content">
+      <span class="close-map" onclick="closeMapModal()">✕</span>
+      <img src="images/map-modelhouse.png" alt="견본주택 약도">
+    </div>
+  </div>
+
   <script src="js/script.js"></script>
+  <script>
+    // Map Modal functions
+    function openMapModal() {
+      document.getElementById('mapModal').style.display = 'flex';
+    }
+    function closeMapModal() {
+      document.getElementById('mapModal').style.display = 'none';
+    }
+  </script>
 </body>
 
 
