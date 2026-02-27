@@ -1470,3 +1470,572 @@ button {
   cursor: pointer;
   font-size: 0.9rem;
 }
+
+/* =====================================================
+   신규 섹션 — 공급대상 표
+   ===================================================== */
+.supply-section {
+  background: var(--bg-gray);
+}
+
+.supply-table-wrap {
+  overflow-x: auto;
+}
+
+.supply-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  min-width: 480px;
+}
+
+.supply-table th {
+  background: var(--prugio-dark);
+  color: #fff;
+  padding: 16px 20px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.supply-table td {
+  padding: 16px 20px;
+  text-align: center;
+  border-bottom: 1px solid #e8e8e8;
+  color: #444;
+}
+
+.supply-table tr:hover td {
+  background: #f5f7f5;
+}
+
+.hot-row td {
+  background: #fdfaf5;
+  font-weight: 600;
+}
+
+.total-row td {
+  background: var(--prugio-dark);
+  color: #fff;
+  font-weight: 700;
+}
+
+.td-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.td-badge.gold {
+  background: var(--prugio-gold);
+  color: #fff;
+}
+
+.td-badge.gray {
+  background: #ccc;
+  color: #555;
+}
+
+.tr-badge {
+  display: inline-block;
+  margin-left: 6px;
+  background: #c62828;
+  color: #fff;
+  font-size: 0.62rem;
+  padding: 1px 6px;
+  border-radius: 20px;
+  vertical-align: middle;
+}
+
+/* =====================================================
+   신규 섹션 — 커뮤니티
+   ===================================================== */
+.community-section {
+  background: #fff;
+}
+
+.community-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 12px;
+}
+
+.cm-card {
+  border: 1px solid #eaeaea;
+  border-radius: 12px;
+  padding: 36px 24px;
+  text-align: center;
+  transition: box-shadow var(--tr), border-color var(--tr);
+}
+
+.cm-card:hover {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  border-color: var(--prugio-gold);
+}
+
+.cm-icon {
+  font-size: 2.2rem;
+  margin-bottom: 16px;
+}
+
+.cm-card h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--prugio-dark);
+  margin-bottom: 10px;
+}
+
+.cm-card p {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+@media (max-width: 768px) {
+  .community-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =====================================================
+   신규 섹션 — 조경
+   ===================================================== */
+.landscape-section {
+  background: var(--bg-gray);
+}
+
+.ls-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 520px;
+}
+
+.ls-img-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ls-text-side {
+  padding: 80px 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--prugio-deep);
+}
+
+.ls-text-side .sh-eng {
+  color: var(--prugio-gold);
+}
+
+.ls-text-side .sh-title {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 0;
+}
+
+.ls-divider {
+  width: 36px;
+  height: 2px;
+  background: var(--prugio-gold);
+  margin: 24px 0;
+}
+
+.ls-items {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.ls-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.ls-num {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  color: var(--prugio-gold);
+  font-weight: 700;
+  white-space: nowrap;
+  min-width: 70px;
+}
+
+.ls-icon {
+  font-size: 1.4rem;
+  min-width: 32px;
+}
+
+.ls-item strong {
+  color: #fff;
+  font-size: 0.95rem;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.ls-item p {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.85rem;
+  font-weight: 300;
+}
+
+@media (max-width: 1024px) {
+  .ls-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .ls-img-side {
+    height: 280px;
+  }
+
+  .ls-text-side {
+    padding: 48px 32px;
+  }
+}
+
+/* =====================================================
+   신규 섹션 — 프리미엄 팩트 데이터
+   ===================================================== */
+.facts-section {
+  background: var(--prugio-deep);
+  padding: 100px 0;
+}
+
+.facts-section .sh-eng {
+  color: var(--prugio-gold);
+}
+
+.facts-section .sh-title {
+  color: #fff;
+}
+
+.facts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 48px;
+}
+
+.fact-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 36px 28px;
+  transition: background var(--tr), border-color var(--tr);
+}
+
+.fact-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--prugio-gold);
+}
+
+.fc-num {
+  font-family: var(--font-serif);
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--prugio-gold);
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.fc-num small {
+  font-size: 0.9rem;
+}
+
+.fc-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.fc-desc {
+  font-size: 0.83rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+@media (max-width: 1024px) {
+  .facts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .facts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =====================================================
+   신규 섹션 — 주차대수 비교
+   ===================================================== */
+.parking-section {
+  background: var(--bg-gray);
+}
+
+.parking-compare {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.pc-highlight {
+  background: var(--prugio-dark);
+  color: #fff;
+  border-radius: 12px;
+  padding: 40px 24px;
+  text-align: center;
+}
+
+.pc-label {
+  font-size: 0.82rem;
+  color: var(--prugio-gold-light);
+  margin-bottom: 12px;
+}
+
+.pc-num {
+  font-family: var(--font-serif);
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--prugio-gold);
+}
+
+.pc-sub {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 8px;
+}
+
+.pc-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 8px;
+}
+
+.pc-bar-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.pc-bar-label {
+  width: 160px;
+  font-size: 0.85rem;
+  color: #555;
+  flex-shrink: 0;
+}
+
+.pc-bar-wrap {
+  flex: 1;
+  background: #eaeaea;
+  border-radius: 50px;
+  overflow: hidden;
+  height: 36px;
+}
+
+.pc-bar {
+  height: 100%;
+  background: #ccc;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 14px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #555;
+  transition: width 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.pc-bar.best {
+  background: var(--prugio-dark);
+  color: var(--prugio-gold);
+}
+
+.parking-notice {
+  font-size: 0.8rem;
+  color: #999;
+  margin-top: 24px;
+}
+
+@media (max-width: 768px) {
+  .parking-compare {
+    grid-template-columns: 1fr;
+  }
+
+  .pc-bar-label {
+    width: 100px;
+  }
+}
+
+/* =====================================================
+   신규 섹션 — 분양가 납입일정
+   ===================================================== */
+.payment-section {
+  background: #fff;
+}
+
+.payment-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 12px;
+}
+
+.pay-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 32px 24px;
+  position: relative;
+  transition: box-shadow var(--tr), border-color var(--tr);
+}
+
+.pay-card:hover {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+}
+
+.pay-card.hot {
+  border-color: var(--prugio-gold);
+  border-width: 2px;
+}
+
+.pay-badge {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background: var(--prugio-gold);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 50px;
+}
+
+.pay-type {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--prugio-dark);
+  margin-bottom: 8px;
+}
+
+.pay-price {
+  font-size: 1rem;
+  color: var(--prugio-gold);
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.pay-steps {
+  border-top: 1px solid #eaeaea;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.pay-step {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.pay-step span {
+  font-size: 0.82rem;
+  color: #888;
+}
+
+.pay-step strong {
+  font-size: 0.88rem;
+  color: var(--prugio-dark);
+}
+
+.pay-notice {
+  font-size: 0.78rem;
+  color: #888;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 14px;
+}
+
+.payment-disclaimer {
+  font-size: 0.8rem;
+  color: #999;
+  margin-top: 32px;
+  line-height: 1.7;
+}
+
+@media (max-width: 1024px) {
+  .payment-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .payment-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =====================================================
+   Footer 유의사항 — details/summary
+   ===================================================== */
+.f-caution {
+  margin-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 16px;
+}
+
+.f-caution summary {
+  font-size: 0.82rem;
+  color: #aaa;
+  cursor: pointer;
+  list-style: none;
+  transition: color var(--tr);
+}
+
+.f-caution summary:hover {
+  color: var(--prugio-gold);
+}
+
+.f-caution-body {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.f-caution-body p {
+  font-size: 0.78rem;
+  color: #888;
+  line-height: 1.7;
+}
+
+/* ── 관리자 버튼 ── */
+.hu-admin {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
+  padding: 4px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  text-decoration: none;
+  transition: color 0.2s, border-color 0.2s;
+  margin-left: 8px;
+}
+
+.hu-admin:hover {
+  color: var(--prugio-gold, #c3a07e);
+  border-color: rgba(195, 160, 126, 0.4);
+}

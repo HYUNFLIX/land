@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>관리자 | 동래 푸르지오 에듀포레</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+        rel="stylesheet" />
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --dark: #144139;
+            --gold: #c3a07e;
+            --bg: #f5f7f5;
+            --font: 'Noto Sans KR', sans-serif;
+        }
+
+        body {
+            font-family: var(--font);
+            background: var(--bg);
+            color: #333;
+        }
+
+        /* ── LOGIN ── */
+        #loginScreen {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0b2b25, #144139);
+        }
+
+        .login-box {
+            background: #fff;
+            border-radius: 16px;
+            padding: 48px 40px;
+            width: 360px;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        .login-logo {
+            font-size: 1.1rem;
+            letter-spacing: 0.2em;
+            color: var(--gold);
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .login-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 32px;
+        }
+
+        .login-box input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-family: var(--font);
+            margin-bottom: 12px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .login-box input:focus {
+            border-color: var(--dark);
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 14px;
+            background: var(--dark);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: var(--font);
+            transition: background 0.2s;
+            margin-top: 8px;
+        }
+
+        .btn-login:hover {
+            background: #0f3530;
+        }
+
+        .login-error {
+            color: #c62828;
+            font-size: 0.82rem;
+            margin-top: 10px;
+            display: none;
+        }
+
+        /* ── ADMIN PANEL ── */
+        #adminPanel {
+            display: none;
+        }
+
+        .admin-header {
+            background: var(--dark);
+            padding: 18px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .admin-header-logo {
+            color: var(--gold);
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            font-size: 1rem;
+        }
+
+        .admin-header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .admin-header-info {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.85rem;
+        }
+
+        .btn-logout {
+            padding: 8px 20px;
+            background: transparent;
+            border: 1px solid rgba(195, 160, 126, 0.5);
+            color: var(--gold);
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.82rem;
+            font-family: var(--font);
+            transition: all 0.2s;
+        }
+
+        .btn-logout:hover {
+            background: rgba(195, 160, 126, 0.1);
+        }
+
+        .admin-main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+
+        .admin-stat-bar {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .stat-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 24px 28px;
+            border-left: 4px solid var(--dark);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+        }
+
+        .stat-label {
+            font-size: 0.82rem;
+            color: #888;
+            margin-bottom: 8px;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .admin-toolbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .admin-toolbar h2 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .toolbar-right {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-csv {
+            padding: 10px 20px;
+            background: var(--gold);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: var(--font);
+            font-size: 0.85rem;
+            font-weight: 700;
+            transition: opacity 0.2s;
+        }
+
+        .btn-csv:hover {
+            opacity: 0.85;
+        }
+
+        .btn-refresh {
+            padding: 10px 16px;
+            background: #fff;
+            color: var(--dark);
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: var(--font);
+            font-size: 0.85rem;
+            transition: background 0.2s;
+        }
+
+        .btn-refresh:hover {
+            background: #f5f5f5;
+        }
+
+        .search-bar {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .search-bar input {
+            flex: 1;
+            padding: 10px 14px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-family: var(--font);
+            outline: none;
+        }
+
+        .search-bar input:focus {
+            border-color: var(--dark);
+        }
+
+        .table-wrap {
+            overflow-x: auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 700px;
+        }
+
+        thead th {
+            background: var(--dark);
+            color: #fff;
+            padding: 14px 16px;
+            text-align: left;
+            font-size: 0.85rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        tbody tr {
+            border-bottom: 1px solid #f0f0f0;
+            transition: background 0.15s;
+        }
+
+        tbody tr:hover {
+            background: #fafafa;
+        }
+
+        tbody td {
+            padding: 14px 16px;
+            font-size: 0.88rem;
+            color: #444;
+        }
+
+        .badge-type {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            background: #e8f0e8;
+            color: var(--dark);
+        }
+
+        #emptyMsg {
+            text-align: center;
+            padding: 60px 0;
+            color: #aaa;
+            font-size: 0.95rem;
+            display: none;
+        }
+
+        #loadingMsg {
+            text-align: center;
+            padding: 40px 0;
+            color: #aaa;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 640px) {
+            .admin-stat-bar {
+                grid-template-columns: 1fr;
+            }
+
+            .admin-header {
+                padding: 14px 20px;
+            }
+
+            .admin-main {
+                padding: 24px 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 로그인 화면 -->
+    <div id="loginScreen">
+        <div class="login-box">
+            <p class="login-logo">PRUGIO</p>
+            <h1 class="login-title">관리자 로그인</h1>
+            <input type="email" id="adminEmail" placeholder="이메일" autocomplete="username" />
+            <input type="password" id="adminPassword" placeholder="비밀번호" autocomplete="current-password"
+                onkeydown="if(event.key==='Enter')loginAdmin()" />
+            <button class="btn-login" onclick="loginAdmin()">로그인</button>
+            <p class="login-error" id="loginError">이메일 또는 비밀번호가 올바르지 않습니다.</p>
+        </div>
+    </div>
+
+    <!-- 관리자 패널 -->
+    <div id="adminPanel">
+        <header class="admin-header">
+            <span class="admin-header-logo">PRUGIO 관리자</span>
+            <div class="admin-header-right">
+                <span class="admin-header-info" id="adminUserInfo"></span>
+                <button class="btn-logout" onclick="logoutAdmin()">로그아웃</button>
+            </div>
+        </header>
+
+        <main class="admin-main">
+            <!-- 통계 카드 -->
+            <div class="admin-stat-bar">
+                <div class="stat-card">
+                    <div class="stat-label">총 관심고객</div>
+                    <div class="stat-value" id="statTotal">-</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">오늘 등록</div>
+                    <div class="stat-value" id="statToday">-</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">이번 주 등록</div>
+                    <div class="stat-value" id="statWeek">-</div>
+                </div>
+            </div>
+
+            <!-- 툴바 -->
+            <div class="admin-toolbar">
+                <h2>관심고객 등록 목록</h2>
+                <div class="toolbar-right">
+                    <button class="btn-refresh" onclick="loadLeads()">↺ 새로고침</button>
+                    <button class="btn-csv" onclick="downloadCSV()">⬇ CSV 다운로드</button>
+                </div>
+            </div>
+
+            <!-- 검색 -->
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="이름 또는 연락처로 검색..." oninput="filterTable()" />
+            </div>
+
+            <!-- 테이블 -->
+            <div class="table-wrap">
+                <table id="leadsTable">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>이름</th>
+                            <th>연락처</th>
+                            <th>관심 평형</th>
+                            <th>문의사항</th>
+                            <th>개인정보동의</th>
+                            <th>등록일시</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leadsBody">
+                        <tr>
+                            <td colspan="7" id="loadingMsg">데이터를 불러오는 중...</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p id="emptyMsg">등록된 관심고객이 없습니다.</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Firebase SDK (v9 compat) -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+
+    <script>
+        // ──────────────────────────────────────────────
+        //  ★ Firebase 설정값 입력 (Firebase Console에서 복사)
+        // ──────────────────────────────────────────────
+        const firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_AUTH_DOMAIN",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_STORAGE_BUCKET",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+
+        let allLeads = [];
+
+        // ── 인증 상태 감지 ──
+        auth.onAuthStateChanged(user => {
+            if (user) {
+                document.getElementById('loginScreen').style.display = 'none';
+                document.getElementById('adminPanel').style.display = 'block';
+                document.getElementById('adminUserInfo').textContent = user.email;
+                loadLeads();
+            } else {
+                document.getElementById('loginScreen').style.display = 'flex';
+                document.getElementById('adminPanel').style.display = 'none';
+            }
+        });
+
+        // ── 로그인 ──
+        async function loginAdmin() {
+            const email = document.getElementById('adminEmail').value.trim();
+            const password = document.getElementById('adminPassword').value;
+            const errEl = document.getElementById('loginError');
+            errEl.style.display = 'none';
+            try {
+                await auth.signInWithEmailAndPassword(email, password);
+            } catch (e) {
+                errEl.style.display = 'block';
+            }
+        }
+
+        // ── 로그아웃 ──
+        async function logoutAdmin() {
+            await auth.signOut();
+        }
+
+        // ── 데이터 로드 ──
+        async function loadLeads() {
+            const tbody = document.getElementById('leadsBody');
+            tbody.innerHTML = '<tr><td colspan="7" id="loadingMsg" style="text-align:center;padding:40px;color:#aaa;">불러오는 중...</td></tr>';
+
+            try {
+                const snap = await db.collection('leads')
+                    .orderBy('createdAt', 'desc')
+                    .get();
+
+                allLeads = snap.docs.map((doc, i) => ({ id: doc.id, ...doc.data() }));
+                renderTable(allLeads);
+                updateStats(allLeads);
+            } catch (e) {
+                tbody.innerHTML = `<tr><td colspan="7" style="text-align:center;padding:40px;color:#c62828;">데이터 로드 실패: ${e.message}</td></tr>`;
+            }
+        }
+
+        // ── 테이블 렌더링 ──
+        function renderTable(leads) {
+            const tbody = document.getElementById('leadsBody');
+            const emptyEl = document.getElementById('emptyMsg');
+
+            if (!leads.length) {
+                tbody.innerHTML = '';
+                emptyEl.style.display = 'block';
+                return;
+            }
+            emptyEl.style.display = 'none';
+
+            tbody.innerHTML = leads.map((d, i) => {
+                const dt = d.createdAt?.toDate ? d.createdAt.toDate() : new Date();
+                const dateStr = dt.toLocaleDateString('ko-KR') + ' ' +
+                    dt.toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit' });
+                return `<tr>
+        <td>${i + 1}</td>
+        <td>${esc(d.name || '-')}</td>
+        <td>${esc(d.phone || '-')}</td>
+        <td><span class="badge-type">${esc(d.unitType || '-')}</span></td>
+        <td>${esc(d.message || '-')}</td>
+        <td>${d.privacy ? '✅ 동의' : '❌'}</td>
+        <td>${dateStr}</td>
+      </tr>`;
+            }).join('');
+        }
+
+        // ── XSS 방지 ──
+        function esc(str) {
+            return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        }
+
+        // ── 통계 업데이트 ──
+        function updateStats(leads) {
+            const now = new Date();
+            const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+            const weekAgo = new Date(today); weekAgo.setDate(today.getDate() - 7);
+
+            const todayCount = leads.filter(d => {
+                const dt = d.createdAt?.toDate ? d.createdAt.toDate() : new Date(0);
+                return dt >= today;
+            }).length;
+            const weekCount = leads.filter(d => {
+                const dt = d.createdAt?.toDate ? d.createdAt.toDate() : new Date(0);
+                return dt >= weekAgo;
+            }).length;
+
+            document.getElementById('statTotal').textContent = leads.length;
+            document.getElementById('statToday').textContent = todayCount;
+            document.getElementById('statWeek').textContent = weekCount;
+        }
+
+        // ── 검색 필터 ──
+        function filterTable() {
+            const q = document.getElementById('searchInput').value.toLowerCase();
+            const filtered = allLeads.filter(d =>
+                (d.name || '').toLowerCase().includes(q) ||
+                (d.phone || '').toLowerCase().includes(q)
+            );
+            renderTable(filtered);
+        }
+
+        // ── CSV 다운로드 ──
+        function downloadCSV() {
+            if (!allLeads.length) { alert('다운로드할 데이터가 없습니다.'); return; }
+
+            const headers = ['번호', '이름', '연락처', '관심평형', '문의사항', '개인정보동의', '등록일시'];
+            const rows = allLeads.map((d, i) => {
+                const dt = d.createdAt?.toDate ? d.createdAt.toDate() : new Date();
+                const dateStr = dt.toLocaleString('ko-KR');
+                return [
+                    i + 1,
+                    d.name || '',
+                    d.phone || '',
+                    d.unitType || '',
+                    (d.message || '').replace(/,/g, '，'),
+                    d.privacy ? '동의' : '미동의',
+                    dateStr
+                ];
+            });
+
+            const csv = [headers, ...rows]
+                .map(r => r.map(v => `"${v}"`).join(','))
+                .join('\n');
+
+            const BOM = '\uFEFF'; // Excel 한글 깨짐 방지
+            const blob = new Blob([BOM + csv], { type: 'text/csv;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `관심고객_${new Date().toLocaleDateString('ko-KR').replace(/\. /g, '-').replace('.', '')}.csv`;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+
+</html>

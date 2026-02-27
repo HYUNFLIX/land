@@ -67,6 +67,9 @@
     rel="stylesheet" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
@@ -120,6 +123,7 @@
           <span class="icon">📞</span>
           051-000-0000
         </a>
+        <a href="pages/admin.html" class="hu-admin" title="관리자" target="_blank">⚙ 관리</a>
       </div>
       <button class="nav-toggle" id="navToggle" aria-label="메뉴">
         <span></span><span></span><span></span>
@@ -213,7 +217,79 @@
     </div>
   </section>
 
-  <!-- ===================== UNIT INFO (OFFICIAL CIRCLE SELECTOR UI) ===================== -->
+  <!-- ===================== 공급대상 ===================== -->
+  <section class="section supply-section" id="supply">
+    <div class="container">
+      <div class="sec-header reveal">
+        <span class="sh-eng">SUPPLY TARGET</span>
+        <h2 class="sh-title">공급대상</h2>
+        <p class="sh-desc">총 1,481세대 중 일반분양 474세대, 4가지 전용면적 타입으로 구성됩니다.</p>
+      </div>
+      <div class="supply-table-wrap reveal delay-1">
+        <table class="supply-table">
+          <thead>
+            <tr>
+              <th>타입</th>
+              <th>전용면적</th>
+              <th>총 세대수</th>
+              <th>일반분양</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>59A</td>
+              <td>59㎡</td>
+              <td>183세대</td>
+              <td><span class="td-badge gray">조합원</span></td>
+            </tr>
+            <tr>
+              <td>59B</td>
+              <td>59㎡</td>
+              <td>46세대</td>
+              <td><span class="td-badge gray">조합원</span></td>
+            </tr>
+            <tr>
+              <td>74A</td>
+              <td>74㎡</td>
+              <td>100세대</td>
+              <td><span class="td-badge gold">20세대</span></td>
+            </tr>
+            <tr>
+              <td>76A</td>
+              <td>76㎡</td>
+              <td>46세대</td>
+              <td><span class="td-badge gold">15세대</span></td>
+            </tr>
+            <tr class="hot-row">
+              <td>84A <span class="tr-badge">인기</span></td>
+              <td>84㎡</td>
+              <td>550세대</td>
+              <td><span class="td-badge gold">438세대</span></td>
+            </tr>
+            <tr>
+              <td>84A1</td>
+              <td>84㎡</td>
+              <td>1세대</td>
+              <td><span class="td-badge gold">1세대</span></td>
+            </tr>
+            <tr>
+              <td>84B</td>
+              <td>84㎡</td>
+              <td>555세대</td>
+              <td><span class="td-badge gray">조합원</span></td>
+            </tr>
+            <tr class="total-row">
+              <td colspan="2"><strong>합 계</strong></td>
+              <td><strong>1,481세대</strong></td>
+              <td><strong>474세대</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+
   <section class="section unit-info" id="types">
     <div class="container">
       <div class="sec-header align-center reveal">
@@ -365,7 +441,194 @@
     </div>
   </section>
 
+  <!-- ===================== 커뮤니티 시설 ===================== -->
+  <section class="section community-section" id="community">
+    <div class="container">
+      <div class="sec-header reveal">
+        <span class="sh-eng">COMMUNITY</span>
+        <h2 class="sh-title">하이엔드 커뮤니티</h2>
+        <p class="sh-desc">1,481세대 대단지에 걸맞은 프리미엄 커뮤니티 시설</p>
+      </div>
+      <div class="community-grid reveal delay-1">
+        <div class="cm-card">
+          <div class="cm-icon">🧖</div>
+          <h4>사우나</h4>
+          <p>남·여 분리 사우나실,<br>피로 회복과 힐링 공간</p>
+        </div>
+        <div class="cm-card">
+          <div class="cm-icon">⛳</div>
+          <h4>스크린골프</h4>
+          <p>GX룸·스크린골프,<br>단지 내 레저 클럽 하우스</p>
+        </div>
+        <div class="cm-card">
+          <div class="cm-icon">👶</div>
+          <h4>키즈카페</h4>
+          <p>아이들이 안전하게 뛰어놀 수 있는<br>프리미엄 어린이 놀이공간</p>
+        </div>
+        <div class="cm-card">
+          <div class="cm-icon">💼</div>
+          <h4>공유오피스</h4>
+          <p>재택근무·스터디 가능<br>쾌적한 공동 업무 공간</p>
+        </div>
+        <div class="cm-card">
+          <div class="cm-icon">🏊</div>
+          <h4>아쿠아가든</h4>
+          <p>반짝이는 물빛 속 레저·힐링<br>워터 커뮤니티 공간</p>
+        </div>
+        <div class="cm-card">
+          <div class="cm-icon">📦</div>
+          <h4>전 세대 개별창고</h4>
+          <p>모든 세대에 넉넉한<br>전용 창고 공간 제공</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 조경 ===================== -->
+  <section class="section landscape-section">
+    <div class="ls-inner">
+      <div class="ls-img-side">
+        <img src="images/oncheoncheon_park.png" alt="온천천 시민공원 조경">
+      </div>
+      <div class="ls-text-side">
+        <span class="sh-eng">LANDSCAPE</span>
+        <h2 class="sh-title">조경률 36.9%<br>자연을 곁에 둔 에코 힐링</h2>
+        <div class="ls-divider"></div>
+        <div class="ls-items">
+          <div class="ls-item">
+            <span class="ls-num">36.9%</span>
+            <div>
+              <strong>전체 대지 면적 대비 조경 비율</strong>
+              <p>부산 동래구 신축 아파트 최상급 조경 비율</p>
+            </div>
+          </div>
+          <div class="ls-item">
+            <span class="ls-icon">🌿</span>
+            <div>
+              <strong>힐링 포레스트 (Healing Forest)</strong>
+              <p>푸르지오와 함께 자라는 치유의 숲 산책로</p>
+            </div>
+          </div>
+          <div class="ls-item">
+            <span class="ls-icon">💧</span>
+            <div>
+              <strong>아쿠아 가든 (Aqua Garden)</strong>
+              <p>반짝이는 물빛 속 가족의 추억을 자라게 하는 수경 정원</p>
+            </div>
+          </div>
+          <div class="ls-item">
+            <span class="ls-icon">🛋️</span>
+            <div>
+              <strong>커뮤니티 라운지</strong>
+              <p>마치 나의 거실처럼 따뜻한 문화 공간</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 프리미엄 팩트 데이터 ===================== -->
+  <section class="section facts-section">
+    <div class="container">
+      <div class="sec-header align-center reveal">
+        <span class="sh-eng">PREMIUM FACTS</span>
+        <h2 class="sh-title">숫자로 증명하는<br>동래 푸르지오 에듀포레의 가치</h2>
+      </div>
+      <div class="facts-grid reveal delay-1">
+        <div class="fact-card">
+          <div class="fc-num">40.57%</div>
+          <div class="fc-title">브랜드 선호도 1위</div>
+          <div class="fc-desc">아파트 선택 시 '브랜드'를 가장 중요한 요소로 꼽은 응답 비율. 대우건설 푸르지오(PRUGIO)는 압도적 1위 브랜드입니다.</div>
+        </div>
+        <div class="fact-card">
+          <div class="fc-num">2025<br><small>11.28</small></div>
+          <div class="fc-title">만덕~센텀 고속화도로 개통</div>
+          <div class="fc-desc">만덕~센텀 도시고속화도로가 2025년 11월 28일 개통. 사업지에서 센텀시티까지 이동시간이 대폭 단축됩니다.</div>
+        </div>
+        <div class="fact-card">
+          <div class="fc-num">8개교</div>
+          <div class="fc-title">도보권 학세권</div>
+          <div class="fc-desc">반경 0.5km 이내 초·중·고 8개 학교 집중. 학세권 아파트 실거래·가격 프리미엄이 비학세권 대비 월등히 높은 것으로 분석됩니다.</div>
+        </div>
+        <div class="fact-card">
+          <div class="fc-num">1.41대</div>
+          <div class="fc-title">세대당 주차대수</div>
+          <div class="fc-desc">동래구 내 동급 아파트 평균 대비 월등히 높은 세대당 1.41대 주차 확보. 총 2,137대 전용 주차 완비.</div>
+        </div>
+        <div class="fact-card">
+          <div class="fc-num">14,139<br><small>세대</small></div>
+          <div class="fc-title">주변 개발 호재</div>
+          <div class="fc-desc">인근 8개 재개발·재건축·민간특례 구역이 동시 추진 중. 약 14,139세대 신규 주거타운 형성으로 동래 부동산 가치가 상승합니다.</div>
+        </div>
+        <div class="fact-card">
+          <div class="fc-num">36.9%</div>
+          <div class="fc-title">조경 비율</div>
+          <div class="fc-desc">전체 대지 62,122㎡ 중 36.9%가 조경 공간. 도심 속에서도 공원 같은 쾌적한 주거 환경을 즐깁니다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 주차대수 비교 ===================== -->
+  <section class="section parking-section">
+    <div class="container">
+      <div class="sec-header reveal">
+        <span class="sh-eng">PARKING COMPARISON</span>
+        <h2 class="sh-title">주차대수 비교</h2>
+        <p class="sh-desc">인근 단지 대비 월등한 세대당 주차대수 — 총 2,137대(APT 2,073대 + 근생 64대)</p>
+      </div>
+      <div class="parking-compare reveal delay-1">
+        <div class="pc-highlight">
+          <div class="pc-label">동래 푸르지오 에듀포레</div>
+          <div class="pc-num">1.41대</div>
+          <div class="pc-sub">세대당 주차대수</div>
+        </div>
+        <div class="pc-bars">
+          <div class="pc-bar-item">
+            <div class="pc-bar-label">동래 푸르지오 에듀포레</div>
+            <div class="pc-bar-wrap">
+              <div class="pc-bar best" style="width:100%">1.41대</div>
+            </div>
+          </div>
+          <div class="pc-bar-item">
+            <div class="pc-bar-label">안락동 SK뷰</div>
+            <div class="pc-bar-wrap">
+              <div class="pc-bar" style="width:86%">1.24대</div>
+            </div>
+          </div>
+          <div class="pc-bar-item">
+            <div class="pc-bar-label">안락동 부뚜말 래미안</div>
+            <div class="pc-bar-wrap">
+              <div class="pc-bar" style="width:84%">1.21대</div>
+            </div>
+          </div>
+          <div class="pc-bar-item">
+            <div class="pc-bar-label">명장동 E편한세상</div>
+            <div class="pc-bar-wrap">
+              <div class="pc-bar" style="width:79%">1.16대</div>
+            </div>
+          </div>
+          <div class="pc-bar-item">
+            <div class="pc-bar-label">안낙동 L아이파크</div>
+            <div class="pc-bar-wrap">
+              <div class="pc-bar" style="width:79%">1.16대</div>
+            </div>
+          </div>
+          <div class="pc-bar-item">
+            <div class="pc-bar-label">직직동 H</div>
+            <div class="pc-bar-wrap">
+              <div class="pc-bar" style="width:72%">1.02대</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="parking-notice">※ 인접 단지 정보는 공개된 자료를 참고하였으며 실제와 다를 수 있습니다.</p>
+    </div>
+  </section>
+
   <!-- ===================== FULL WIDTH IMAGE DIVIDER ===================== -->
+
   <section class="parallax-divider">
     <div class="pd-bg" style="background-image: url('images/hero_apartment.png');"></div>
     <div class="pd-overlay"></div>
@@ -375,7 +638,63 @@
     </div>
   </section>
 
-  <!-- ===================== CONTACT / REGISTRATION ===================== -->
+  <!-- ===================== 분양가 납입일정 ===================== -->
+  <section class="section payment-section" id="payment">
+    <div class="container">
+      <div class="sec-header align-center reveal">
+        <span class="sh-eng">PAYMENT SCHEDULE</span>
+        <h2 class="sh-title">분양가 및 납입일정</h2>
+        <p class="sh-desc">계약금 5% · 중도금 60% · 잔금 35% — 합리적인 납입 구조</p>
+      </div>
+      <div class="payment-grid reveal delay-1">
+        <div class="pay-card">
+          <div class="pay-type">74㎡ A</div>
+          <div class="pay-price">5억 6,300만원 ~</div>
+          <div class="pay-steps">
+            <div class="pay-step"><span>계약금 5%</span><strong>약 2,815만원</strong></div>
+            <div class="pay-step"><span>중도금 60%</span><strong>약 3억 3,780만원</strong></div>
+            <div class="pay-step"><span>잔금 35%</span><strong>약 1억 9,705만원</strong></div>
+          </div>
+          <p class="pay-notice">중도금 무이자 혜택 문의</p>
+        </div>
+        <div class="pay-card">
+          <div class="pay-type">76㎡ A</div>
+          <div class="pay-price">6억 3,800만원 ~</div>
+          <div class="pay-steps">
+            <div class="pay-step"><span>계약금 5%</span><strong>약 3,190만원</strong></div>
+            <div class="pay-step"><span>중도금 60%</span><strong>약 3억 8,280만원</strong></div>
+            <div class="pay-step"><span>잔금 35%</span><strong>약 2억 2,330만원</strong></div>
+          </div>
+          <p class="pay-notice">중도금 무이자 혜택 문의</p>
+        </div>
+        <div class="pay-card hot">
+          <div class="pay-badge">인기</div>
+          <div class="pay-type">84㎡ A</div>
+          <div class="pay-price">7억 3,700만원 ~</div>
+          <div class="pay-steps">
+            <div class="pay-step"><span>계약금 5%</span><strong>약 3,685만원</strong></div>
+            <div class="pay-step"><span>중도금 60%</span><strong>약 4억 4,220만원</strong></div>
+            <div class="pay-step"><span>잔금 35%</span><strong>약 2억 5,795만원</strong></div>
+          </div>
+          <p class="pay-notice">중도금 무이자 혜택 문의</p>
+        </div>
+        <div class="pay-card">
+          <div class="pay-type">84㎡ A1</div>
+          <div class="pay-price">7억 5,410만원</div>
+          <div class="pay-steps">
+            <div class="pay-step"><span>계약금 5%</span><strong>약 3,770만원</strong></div>
+            <div class="pay-step"><span>중도금 60%</span><strong>약 4억 5,246만원</strong></div>
+            <div class="pay-step"><span>잔금 35%</span><strong>약 2억 6,393만원</strong></div>
+          </div>
+          <p class="pay-notice">1세대 한정 (희소 평면)</p>
+        </div>
+      </div>
+      <p class="payment-disclaimer">※ 분양가는 층별·동별로 다를 수 있으며, 정확한 분양가는 계약 시 확인하시기 바랍니다.<br>※ 중도금 이자 혜택 여부는 분양 조건에 따라 변경될 수
+        있습니다.</p>
+    </div>
+  </section>
+
+
   <section class="section contact" id="contact">
     <div class="container">
       <div class="contact-box reveal">
@@ -472,7 +791,23 @@
           ※ 본 홈페이지에 사용된 CG 및 이미지는 소비자의 이해를 돕기 위해 제작된 것으로, 실제와 다를 수 있습니다.<br>
           ※ 개발 계획 및 교통망 등은 인허가 관청이나 국가 시책에 따라 변경될 수 있습니다.
         </p>
+        <details class="f-caution">
+          <summary>▸ 유의사항 전체 보기</summary>
+          <div class="f-caution-body">
+            <p>※ 본 홈페이지는 입주자모집공고문이 아니며, 청약 전 반드시 입주자모집공고문을 확인하시기 바랍니다.</p>
+            <p>※ 본 홈페이지의 내용과 지역도는 소비자의 이해를 돕기 위한 것으로, 교통·학교·개발 계획 등에 관한 사항은 해당 기관의 자료를 토대로 제작되었으며, 관련 기관 사정에 따라 변경될 수
+              있습니다.</p>
+            <p>※ 주차차단기는 부속시설(주차장 또는 단지 내 도로의 일부)에 속하며 부속시설이 증·개축에 해당하는 행위가 발생하는 부대시설이며, 부대시설 증·개축에 따른 행위허가는 해당 기간의 고유임.
+            </p>
+            <p>※ 공동주택관리법 시행규칙 제5조 제3항에 따른 위반 행위를 기준(면적 및 규모의 10% 범위)을 적용하여 설치되어 있는 주차장에는 해당 도로의
+              부속시설(안전표지·반사경·방호울타리·차선규제봉 등)이 포함될 수 있음.</p>
+            <p>※ 본 홈페이지 내 조경, 커뮤니티 시설 등에 관한 내용은 인허가 과정에서 변경될 수 있습니다.</p>
+            <p>※ 분양가는 층별·동별·계약 시기에 따라 차이가 있을 수 있습니다.</p>
+            <p>※ 입주자모집공고, 계약서 및 개별 계약조건이 우선하며, 항상 시공사 담당자의 설명을 참조하시기 바랍니다.</p>
+          </div>
+        </details>
       </div>
+
     </div>
   </footer>
 
@@ -507,7 +842,29 @@
     </div>
   </div>
 
+  <!-- Firebase 초기화 (★ 아래 YOUR_* 값을 실제 Firebase 프로젝트 값으로 교체) -->
+  <script>
+    (function () {
+      const firebaseConfig = {
+        apiKey: "YOUR_API_KEY",
+        authDomain: "YOUR_AUTH_DOMAIN",
+        projectId: "YOUR_PROJECT_ID",
+        storageBucket: "YOUR_STORAGE_BUCKET",
+        messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+        appId: "YOUR_APP_ID"
+      };
+
+      try {
+        if (!firebase.apps.length) firebase.initializeApp(firebaseConfig);
+        window._prugio_db = firebase.firestore();
+      } catch (e) {
+        console.warn('Firebase 초기화 실패:', e);
+      }
+    })();
+  </script>
+
   <script src="js/script.js"></script>
 </body>
+
 
 </html>

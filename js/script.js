@@ -182,9 +182,43 @@
       const formData = new FormData(officialForm);
       console.log('Google Sheets API로 전송할 데이터:', Object.fromEntries(formData));
 
-      // Success simulation
-      alert('관심고객 등록이 완료되었습니다.\n(구글 스프레드시트로 정보 연동됨)\n담당자가 빠른 시일 내에 연락드리겠습니다.');
-      officialForm.reset();
+      // Firebase Firestore 저장
+      const btn = officialForm.querySelector('button[type="submit"]');
+      const origText = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = '등록 중...';
+
+      const db = window._prugio_db;
+      if (!db) {
+        alert('서비스 초기화 중입니다. 잠시 후 다시 시도해주세요.');
+        btn.disabled = false;
+        btn.textContent = origText;
+        return;
+      }
+
+      const leadData = {
+        name: (officialForm.querySelector('[name="name"]') || officialForm.querySelector('#regName'))?.value || '',
+        phone: (officialForm.querySelector('[name="phone"]') || officialForm.querySelector('#regPhone'))?.value || '',
+        unitType: (officialForm.querySelector('[name="unitType"]') || officialForm.querySelector('#regUnit'))?.value || '',
+        message: (officialForm.querySelector('[name="message"]') || officialForm.querySelector('#regMsg'))?.value || '',
+        privacy: (officialForm.querySelector('[name="privacy"]') || officialForm.querySelector('#regPrivacy'))?.checked || false,
+        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+        source: document.referrer || 'direct'
+      };
+
+      db.collection('leads').add(leadData)
+        .then(() => {
+          alert('관심고객 등록이 완료되었습니다!\n담당자가 빠른 시일 내에 연락드리겠습니다.');
+          officialForm.reset();
+        })
+        .catch(err => {
+          console.error('Firestore 저장 오류:', err);
+          alert('등록 중 오류가 발생했습니다. 잠시 후 다시 시도하거나 전화로 문의해주세요.');
+        })
+        .finally(() => {
+          btn.disabled = false;
+          btn.textContent = origText;
+        });
     });
   }
 
