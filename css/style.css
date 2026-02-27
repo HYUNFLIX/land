@@ -1416,10 +1416,14 @@ button {
   animation: fadeIn 0.3s ease;
 }
 
-.nm-content img {
-  width: 100%;
-  height: auto;
-  display: block;
+.nm-badge {
+  background: var(--prugio-dark);
+  color: var(--prugio-gold-light);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 10px 24px;
+  text-align: center;
 }
 
 .nm-text {

@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>입지환경 | 동래 푸르지오 에듀포레</title>
+    <meta name="description" content="동래 푸르지오 에듀포레의 5대 입지 프리미엄. 쾌속 교통, 안심 학세권, 웰빙 자연, 생활 인프라, 브랜드 커뮤니티." />
+
+    <meta property="og:title" content="입지환경 | 동래 푸르지오 에듀포레">
+    <meta property="og:description" content="교통, 교육, 자연, 생활, 브랜드 — 5가지 입지 프리미엄을 확인하세요.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@300;400;600;700&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        /* ===== RESET & VARIABLES ===== */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --prugio-dark: #144139;
+            --prugio-deep: #0b2b25;
+            --prugio-green: #1a5c52;
+            --prugio-gold: #c3a07e;
+            --prugio-gold-light: #e8d5b0;
+            --bg-gray: #f8f8f6;
+            --font-serif: 'Noto Serif KR', serif;
+            --font-sans: 'Noto Sans KR', sans-serif;
+            --tr: 0.35s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: #333;
+            background: #fff;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--prugio-dark);
+            padding: 0 40px;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .h-logo {
+            display: flex;
+            align-items: baseline;
+            gap: 14px;
+        }
+
+        .logo-prugio {
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            color: var(--prugio-gold);
+        }
+
+        .logo-sub {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        .h-nav {
+            display: flex;
+            gap: 36px;
+        }
+
+        .h-nav a {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 500;
+            transition: color var(--tr);
+        }
+
+        .h-nav a:hover,
+        .h-nav a.active {
+            color: var(--prugio-gold);
+        }
+
+        .h-back {
+            font-size: 0.85rem;
+            color: var(--prugio-gold-light);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border: 1px solid rgba(195, 160, 126, 0.4);
+            border-radius: 4px;
+            transition: all var(--tr);
+        }
+
+        .h-back:hover {
+            background: rgba(195, 160, 126, 0.1);
+        }
+
+        /* ===== SUB HERO BANNER ===== */
+        .sub-hero {
+            margin-top: 72px;
+            background: linear-gradient(135deg, var(--prugio-deep) 0%, var(--prugio-green) 60%, #2a7a6e 100%);
+            padding: 100px 40px 80px;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sub-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('../images/premium-01.jpg') center/cover no-repeat;
+            opacity: 0.15;
+        }
+
+        .sub-hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .sub-hero-eng {
+            font-size: 0.8rem;
+            letter-spacing: 0.3em;
+            color: var(--prugio-gold);
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .sub-hero h1 {
+            font-family: var(--font-serif);
+            font-size: clamp(2.2rem, 4vw, 3rem);
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+
+        .sub-hero p {
+            font-size: 1.05rem;
+            color: rgba(255, 255, 255, 0.75);
+            font-weight: 300;
+        }
+
+        .sub-breadcrumb {
+            margin-top: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .sub-breadcrumb a {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .sub-breadcrumb a:hover {
+            color: var(--prugio-gold);
+        }
+
+        .sub-breadcrumb .sep {
+            opacity: 0.4;
+        }
+
+        /* ===== CONTAINER ===== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .sec-header {
+            margin-bottom: 60px;
+        }
+
+        .sh-eng {
+            display: block;
+            font-size: 0.75rem;
+            letter-spacing: 0.25em;
+            color: var(--prugio-gold);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .sh-title {
+            font-family: var(--font-serif);
+            font-size: 2.2rem;
+            color: var(--prugio-dark);
+            font-weight: 700;
+        }
+
+        .sh-desc {
+            font-size: 1rem;
+            color: #666;
+            margin-top: 16px;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        /* ===== MAP SECTION ===== */
+        .map-section {
+            background: var(--bg-gray);
+        }
+
+        .map-wrap {
+            height: 500px;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 32px;
+        }
+
+        .map-wrap iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .map-notice {
+            background: #fff3cd;
+            border-left: 4px solid var(--prugio-gold);
+            padding: 16px 20px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .map-tags {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 24px;
+        }
+
+        .map-tag {
+            padding: 8px 20px;
+            border: 1px solid #dcdcdc;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: #555;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .map-tag .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--prugio-gold);
+            flex-shrink: 0;
+        }
+
+        /* ===== PREMIUM FEATURES ===== */
+        .premium-section {
+            background: #fff;
+        }
+
+        .pr-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 80px;
+            margin-top: 60px;
+        }
+
+        .pr-item {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .pr-item.reverse {
+            grid-template-columns: 1fr 1.2fr;
+        }
+
+        .pr-item.reverse .pr-img-wrap {
+            order: 2;
+        }
+
+        .pr-item.reverse .pr-text {
+            order: 1;
+            padding-left: 0;
+        }
+
+        .pr-img-wrap {
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+        }
+
+        .pr-img-wrap img {
+            width: 100%;
+            height: 440px;
+            object-fit: cover;
+            transition: transform 1.5s ease;
+        }
+
+        .pr-item:hover .pr-img-wrap img {
+            transform: scale(1.04);
+        }
+
+        .pr-text {
+            padding-right: 40px;
+        }
+
+        .pr-num {
+            font-family: var(--font-serif);
+            font-size: 3.5rem;
+            color: var(--prugio-gold);
+            display: block;
+            margin-bottom: 8px;
+            opacity: 0.4;
+        }
+
+        .pr-eng {
+            font-size: 0.75rem;
+            letter-spacing: 0.25em;
+            color: var(--prugio-gold);
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .pr-text h3 {
+            font-family: var(--font-serif);
+            font-size: 1.9rem;
+            color: var(--prugio-dark);
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .pr-text p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .pr-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 24px;
+        }
+
+        .pr-tag {
+            padding: 6px 14px;
+            background: var(--bg-gray);
+            border-radius: 4px;
+            font-size: 0.82rem;
+            color: var(--prugio-dark);
+            font-weight: 500;
+        }
+
+        .pr-divider {
+            width: 40px;
+            height: 2px;
+            background: var(--prugio-gold);
+            margin: 20px 0;
+        }
+
+        /* ===== DISCLAIMER ===== */
+        .disclaimer {
+            background: #f5f5f5;
+            padding: 40px 0;
+            border-top: 1px solid #eaeaea;
+        }
+
+        .disclaimer p {
+            font-size: 0.82rem;
+            color: #999;
+            line-height: 1.7;
+            margin-bottom: 6px;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--prugio-deep);
+            padding: 50px 0;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .f-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .f-logo {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            color: var(--prugio-gold);
+            letter-spacing: 0.15em;
+        }
+
+        .f-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .f-links a {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .f-links a:hover {
+            color: var(--prugio-gold);
+        }
+
+        .f-copy {
+            font-size: 0.8rem;
+            margin-top: 20px;
+        }
+
+        /* ===== REVEAL ANIMATION ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal.d1 {
+            transition-delay: 0.1s;
+        }
+
+        .reveal.d2 {
+            transition-delay: 0.2s;
+        }
+
+        .reveal.d3 {
+            transition-delay: 0.3s;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .h-nav {
+                display: none;
+            }
+
+            .pr-item,
+            .pr-item.reverse {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .pr-item.reverse .pr-img-wrap {
+                order: 1;
+            }
+
+            .pr-item.reverse .pr-text {
+                order: 2;
+            }
+
+            .pr-text {
+                padding-right: 0;
+            }
+
+            .pr-img-wrap img {
+                height: 280px;
+            }
+
+            .sub-hero {
+                padding: 80px 24px 60px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 24px;
+            }
+
+            .header {
+                padding: 0 24px;
+            }
+
+            .h-back span {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+        <div class="h-logo">
+            <span class="logo-prugio">PRUGIO</span>
+            <span class="logo-sub">동래 푸르지오 에듀포레</span>
+        </div>
+        <nav class="h-nav">
+            <a href="../index.html#overview">사업안내</a>
+            <a href="../index.html#types">평면정보</a>
+            <a href="../index.html#features">프리미엄</a>
+            <a href="../index.html#contact">분양안내</a>
+            <a href="environment.html" class="active">입지환경</a>
+        </nav>
+        <a href="../index.html" class="h-back">
+            ← <span>홈으로</span>
+        </a>
+    </header>
+
+    <!-- ===== SUB HERO ===== -->
+    <section class="sub-hero">
+        <div class="sub-hero-content">
+            <span class="sub-hero-eng">LOCATION &amp; ENVIRONMENT</span>
+            <h1>5가지 입지 프리미엄</h1>
+            <p>교통 · 교육 · 자연 · 생활 · 브랜드 — 모든 것이 완성된 곳</p>
+            <div class="sub-breadcrumb">
+                <a href="../index.html">홈</a>
+                <span class="sep">›</span>
+                <span>입지환경</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== LOCATION MAP ===== -->
+    <section class="section map-section" id="map">
+        <div class="container">
+            <div class="sec-header reveal">
+                <span class="sh-eng">LOCATION MAP</span>
+                <h2 class="sh-title">사업지 위치</h2>
+                <p class="sh-desc">부산광역시 동래구 안락동 1230번지 일원 — 동해남부선 안락역 · 부산원동역 인접</p>
+            </div>
+
+            <div class="map-wrap reveal d1">
+                <iframe
+                    src="https://maps.google.com/maps?q=%EB%B6%80%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C+%EB%8F%99%EB%9E%98%EA%B5%AC+%EC%95%88%EB%9D%BD%EB%8F%991230&output=embed&z=15"
+                    allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+
+            <div class="map-tags reveal d2">
+                <div class="map-tag"><span class="dot"></span> 안락역 (동해남부선) 도보권</div>
+                <div class="map-tag"><span class="dot"></span> 부산원동역 (동해남부선) 인접</div>
+                <div class="map-tag"><span class="dot"></span> 원동 IC 차량 5분</div>
+                <div class="map-tag"><span class="dot"></span> 충렬초·중·고 도보 5분</div>
+                <div class="map-tag"><span class="dot"></span> 온천천 시민공원 인접</div>
+            </div>
+
+            <div class="map-notice reveal d3">
+                ◆ 만덕~센텀 도시고속화도로(준공 2025.11.28) — 부산광역시청 바로가기 ›<br>
+                ※ 본 홈페이지의 내용과 지역도는 소비자의 이해를 돕기 위한 것으로, 개발 예정·계획 및 교통, 학교 계획 등에 관한 사항은 해당 기관의 자료를 토대로 제작되었습니다.
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 5 PREMIUM FEATURES ===== -->
+    <section class="section premium-section" id="premium">
+        <div class="container">
+            <div class="sec-header reveal">
+                <span class="sh-eng">PREMIUM</span>
+                <h2 class="sh-title">5대 입지 프리미엄</h2>
+                <p class="sh-desc">교통부터 브랜드까지, 동래 푸르지오 에듀포레가 누리는 5가지 특별한 가치</p>
+            </div>
+
+            <div class="pr-grid">
+
+                <!-- 01. TRAFFIC -->
+                <div class="pr-item reveal">
+                    <div class="pr-img-wrap">
+                        <img src="../images/premium-01.jpg" alt="쾌속 교통 — 원동 IC, 동해남부선">
+                    </div>
+                    <div class="pr-text">
+                        <span class="pr-num">01</span>
+                        <span class="pr-eng">TRAFFIC</span>
+                        <h3>어디든 빠르게 통하는<br>쾌속 교통</h3>
+                        <div class="pr-divider"></div>
+                        <p>원동 IC와 동해남부선(안락역·부산원동역)을 통해 도심 내외로 이동이 빠른 사통팔달 광역 교통망을 자랑합니다. 또한 만덕~센텀 도시고속화도로(2025.11 준공)로
+                            부산 도심 접근성이 한층 강화됩니다.</p>
+                        <div class="pr-tags">
+                            <span class="pr-tag">안락역 도보권</span>
+                            <span class="pr-tag">원동 IC 5분</span>
+                            <span class="pr-tag">만덕~센텀 고속화도로</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 02. EDUCATION -->
+                <div class="pr-item reverse reveal d1">
+                    <div class="pr-img-wrap">
+                        <img src="../images/premium-02.jpg" alt="안심 학세권 — 충렬초·중·고">
+                    </div>
+                    <div class="pr-text">
+                        <span class="pr-num">02</span>
+                        <span class="pr-eng">EDUCATION</span>
+                        <h3>걸어서 누리는<br>안심 학세권</h3>
+                        <div class="pr-divider"></div>
+                        <p>단지와 맞닿은 충렬초를 비롯해 반경 0.5km 내 초·중·고교 8개가 밀집되어 있습니다. 자녀가 도보 5분 이내로 등하교할 수 있는 대한민국 최고의 교육 환경입니다.
+                        </p>
+                        <div class="pr-tags">
+                            <span class="pr-tag">충렬초 도보 3분</span>
+                            <span class="pr-tag">충렬중·고</span>
+                            <span class="pr-tag">혜화초·여중·고</span>
+                            <span class="pr-tag">반경 0.5km 8개교</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 03. NATURE -->
+                <div class="pr-item reveal d2">
+                    <div class="pr-img-wrap">
+                        <img src="../images/premium-03.jpg" alt="웰빙라이프 — 온천천, 수영강 시민공원">
+                    </div>
+                    <div class="pr-text">
+                        <span class="pr-num">03</span>
+                        <span class="pr-eng">NATURE</span>
+                        <h3>자연을 곁에 둔<br>웰빙라이프</h3>
+                        <div class="pr-divider"></div>
+                        <p>온천천 시민공원, 수영강 시민공원, 명장공원(조성예정)이 연계됩니다. 단지 전체 면적의 36.9%를 조경으로 채운 에코 힐링 대단지에서 일상 속 산책과 레저, 휴식을
+                            온전히 즐길 수 있습니다.</p>
+                        <div class="pr-tags">
+                            <span class="pr-tag">온천천 시민공원</span>
+                            <span class="pr-tag">수영강 시민공원</span>
+                            <span class="pr-tag">조경률 36.9%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 04. CONVENIENCE -->
+                <div class="pr-item reverse reveal">
+                    <div class="pr-img-wrap">
+                        <img src="../images/premium-04.jpg" alt="생활 인프라 — 이마트 트레이더스, 코스트코">
+                    </div>
+                    <div class="pr-text">
+                        <span class="pr-num">04</span>
+                        <span class="pr-eng">CONVENIENCE</span>
+                        <h3>일상이 여유로운<br>생활 인프라</h3>
+                        <div class="pr-divider"></div>
+                        <p>이마트 트레이더스, 홈플러스, 코스트코 등 대형 쇼핑 시설과 서원시장이 차량 10분 내 위치합니다. 동래봉생병원, 대동병원 등 종합 의료시설도 인접하여 가족 모두의
+                            일상을 안심으로 채웁니다.</p>
+                        <div class="pr-tags">
+                            <span class="pr-tag">이마트 트레이더스</span>
+                            <span class="pr-tag">코스트코</span>
+                            <span class="pr-tag">동래봉생병원</span>
+                            <span class="pr-tag">대동병원</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 05. BRAND & COMMUNITY -->
+                <div class="pr-item reveal d1">
+                    <div class="pr-img-wrap">
+                        <img src="../images/premium-05.jpg" alt="푸르지오 브랜드 대단지 & 하이엔드 커뮤니티">
+                    </div>
+                    <div class="pr-text">
+                        <span class="pr-num">05</span>
+                        <span class="pr-eng">BRAND &amp; COMMUNITY</span>
+                        <h3>푸르지오 브랜드 대단지<br>&amp; 하이엔드 커뮤니티</h3>
+                        <div class="pr-divider"></div>
+                        <p>총 1,481세대 동래의 새로운 랜드마크. 대우건설 푸르지오 브랜드의 품격에 걸맞은 하이엔드 커뮤니티 시설이 제공됩니다.</p>
+                        <div class="pr-tags">
+                            <span class="pr-tag">사우나</span>
+                            <span class="pr-tag">스크린골프</span>
+                            <span class="pr-tag">키즈카페</span>
+                            <span class="pr-tag">공유오피스</span>
+                            <span class="pr-tag">전 세대 개별창고</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section style="background: var(--prugio-dark); padding: 80px 0; text-align: center;">
+        <div class="container">
+            <p style="font-size: 0.85rem; letter-spacing: 0.2em; color: var(--prugio-gold); margin-bottom: 16px;">
+                CONTACT</p>
+            <h2
+                style="font-family: var(--font-serif); font-size: 2rem; color: #fff; font-weight: 700; margin-bottom: 24px;">
+                입지에 대한 궁금한 사항은<br>지금 바로 상담하세요</h2>
+            <a href="../index.html#contact"
+                style="display: inline-block; padding: 18px 60px; background: var(--prugio-gold); color: #fff; font-weight: 700; border-radius: 4px; font-size: 1rem;">관심고객
+                등록하기</a>
+        </div>
+    </section>
+
+    <!-- ===== DISCLAIMER ===== -->
+    <section class="disclaimer">
+        <div class="container">
+            <p>※ 본 홈페이지의 내용과 지역도는 소비자의 이해를 돕기 위한 것으로, 개발 예정·계획 및 교통, 학교 계획 등에 관한 사항은 해당 기관의 자료를 토대로 제작되었습니다.</p>
+            <p>※ 사업 계획 및 일정은 개발계획별 사업주체에 의해 변경될 수 있으며, 동래 푸르지오 에듀포레 사업주체 및 시공사와 무관합니다.</p>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="f-inner">
+                <span class="f-logo">PRUGIO</span>
+                <div class="f-links">
+                    <a href="#">개인정보처리방침</a>
+                    <a href="#">이용약관</a>
+                    <a href="../index.html">홈으로</a>
+                </div>
+            </div>
+            <p class="f-copy">시공 : 대우건설(주) &nbsp;|&nbsp; 현장 : 부산광역시 동래구 안락동 1230번지 일원</p>
+            <p class="f-copy" style="margin-top: 8px;">CopyrightⓒDAEWOO ENGINEERING &amp; CONSTRUCTION CO., LTD. All
+                rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Reveal animation on scroll
+        const reveals = document.querySelectorAll('.reveal');
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+            });
+        }, { threshold: 0.12 });
+        reveals.forEach(el => obs.observe(el));
+    </script>
+
+</body>
+
+</html>

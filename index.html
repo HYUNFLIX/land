@@ -42,7 +42,7 @@
     !function (f, b, e, v, n, t, s) {
       if (f.fbq) return; n = f.fbq = function () {
         n.callMethod ?
-        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
       };
       if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
       n.queue = []; t = b.createElement(e); t.async = !0;
@@ -109,7 +109,7 @@
         <a href="#types">평면정보</a>
         <a href="#features">프리미엄</a>
         <a href="#contact">분양안내</a>
-        <a href="#location">입지환경</a>
+        <a href="pages/environment.html">입지환경</a>
       </nav>
       <div class="h-util">
         <div class="hu-badge">
@@ -131,7 +131,7 @@
       <a href="#types" class="m-nav-link">평면정보</a>
       <a href="#features" class="m-nav-link">프리미엄</a>
       <a href="#contact" class="m-nav-link">분양안내</a>
-      <a href="#location" class="m-nav-link">입지환경</a>
+      <a href="pages/environment.html" class="m-nav-link">입지환경</a>
       <a href="#contact" class="m-nav-link highlight">관심고객등록</a>
     </div>
   </header>
@@ -139,10 +139,7 @@
   <!-- ===================== HERO (OFFICIAL STYLE) ===================== -->
   <section class="hero" id="hero">
     <div class="hero-bg">
-      <video autoplay loop muted playsinline class="hero-video" poster="images/hero_apartment.png">
-        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-        <!-- 드론 영상 배경화면 시뮬레이션용 외부 mp4 링크입니다. -->
-      </video>
+      <img src="images/hero_apartment.png" alt="동래 푸르지오 에듀포레 투시도" class="hero-img" id="heroImg" />
       <div class="hero-gradient"></div>
     </div>
     <div class="hero-content">
@@ -439,13 +436,10 @@
         <h2 class="sh-title">오시는 길</h2>
       </div>
       <div class="map-wrap reveal delay-1">
-        <div id="kakaoMapPlaceholder" class="map-placeholder">
-          <p>카카오맵 / 네이버지도 API 연동 영역<br><small>충렬초, 충렬중, 안락역 도보 동선 시각화</small></p>
-        </div>
-        <!-- 실제 연동 시: 
-        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=YOUR_APP_KEY"></script>
-        <div id="map" style="width:100%;height:100%;"></div> 
-        -->
+        <iframe
+          src="https://maps.google.com/maps?q=%EB%B6%80%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C+%EB%8F%99%EB%9E%98%EA%B5%AC+%EC%95%88%EB%9D%BD%EB%8F%991230&output=embed&z=15"
+          width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
       </div>
       <div class="map-info reveal delay-2">
         <div class="mi-item">
@@ -501,7 +495,7 @@
   <!-- ===================== NOTICE MODAL (Cookie-based) ===================== -->
   <div class="notice-modal" id="noticeModal">
     <div class="nm-content">
-      <img src="images/premium-img01.jpg" alt="공지사항 이미지">
+      <div class="nm-badge">공지</div>
       <div class="nm-text">
         <h3>[안내] 선착순 동·호 지정계약</h3>
         <p>로열층 상담을 원하시면 지금 바로 연락주세요!</p>
