@@ -1,0 +1,15 @@
+# Python 임시 파일
+*.py
+__pycache__/
+
+# PDF 및 추출 텍스트
+*.pdf
+pdf_content.txt
+pdf_content_utf8.txt
+pdf_outline.txt
+
+# 기타 임시 파일
+*.tmp
+*.log
+.DS_Store
+Thumbs.db
