@@ -4,11 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>입지환경 | 동래 푸르지오 에듀포레</title>
-    <meta name="description" content="동래 푸르지오 에듀포레의 5대 입지 프리미엄. 쾌속 교통, 안심 학세권, 웰빙 자연, 생활 인프라, 브랜드 커뮤니티." />
-
-    <meta property="og:title" content="입지환경 | 동래 푸르지오 에듀포레">
-    <meta property="og:description" content="교통, 교육, 자연, 생활, 브랜드 — 5가지 입지 프리미엄을 확인하세요.">
+    <title>입지여건 | 동래 푸르지오 에듀포레</title>
+    <meta name="description" content="동래 푸르지오 에듀포레 입지여건 — 위치도, 교통환경, 생활편의환경, 교육환경, 개발환경" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,7 +14,6 @@
         rel="stylesheet" />
 
     <style>
-        /* ===== RESET & VARIABLES ===== */
         *,
         *::before,
         *::after {
@@ -58,7 +54,7 @@
             max-width: 100%;
         }
 
-        /* ===== HEADER ===== */
+        /* HEADER */
         .header {
             position: fixed;
             top: 0;
@@ -126,11 +122,11 @@
             background: rgba(195, 160, 126, 0.1);
         }
 
-        /* ===== SUB HERO BANNER ===== */
+        /* SUB HERO */
         .sub-hero {
             margin-top: 72px;
             background: linear-gradient(135deg, var(--prugio-deep) 0%, var(--prugio-green) 60%, #2a7a6e 100%);
-            padding: 100px 40px 80px;
+            padding: 80px 40px 60px;
             text-align: center;
             color: #fff;
             position: relative;
@@ -142,7 +138,7 @@
             position: absolute;
             inset: 0;
             background: url('../images/premium-01.jpg') center/cover no-repeat;
-            opacity: 0.15;
+            opacity: 0.12;
         }
 
         .sub-hero-content {
@@ -151,273 +147,379 @@
         }
 
         .sub-hero-eng {
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             letter-spacing: 0.3em;
             color: var(--prugio-gold);
             text-transform: uppercase;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             display: block;
         }
 
         .sub-hero h1 {
             font-family: var(--font-serif);
-            font-size: clamp(2.2rem, 4vw, 3rem);
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
             font-weight: 700;
             line-height: 1.3;
-            margin-bottom: 20px;
+            margin-bottom: 14px;
         }
 
         .sub-hero p {
-            font-size: 1.05rem;
-            color: rgba(255, 255, 255, 0.75);
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.72);
             font-weight: 300;
         }
 
         .sub-breadcrumb {
-            margin-top: 40px;
+            margin-top: 32px;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.82rem;
+            color: rgba(255, 255, 255, 0.55);
         }
 
         .sub-breadcrumb a {
-            color: rgba(255, 255, 255, 0.6);
+            color: rgba(255, 255, 255, 0.55);
         }
 
         .sub-breadcrumb a:hover {
             color: var(--prugio-gold);
         }
 
-        .sub-breadcrumb .sep {
-            opacity: 0.4;
+        /* TAB NAVIGATION */
+        .tab-nav-wrap {
+            background: var(--prugio-dark);
+            position: sticky;
+            top: 72px;
+            z-index: 900;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
-        /* ===== CONTAINER ===== */
+        .tab-nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            gap: 0;
+        }
+
+        .tab-btn {
+            padding: 20px 32px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.6);
+            cursor: pointer;
+            background: none;
+            border: none;
+            border-bottom: 3px solid transparent;
+            transition: all var(--tr);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+        }
+
+        .tab-btn:hover {
+            color: rgba(255, 255, 255, 0.9);
+            border-bottom-color: rgba(195, 160, 126, 0.4);
+        }
+
+        .tab-btn.active {
+            color: var(--prugio-gold);
+            border-bottom-color: var(--prugio-gold);
+            font-weight: 700;
+        }
+
+        .tab-btn .tab-icon {
+            font-size: 1rem;
+        }
+
+        /* CONTAINER */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 40px;
         }
 
-        .section {
-            padding: 100px 0;
+        /* TAB PANELS */
+        .tab-panel {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .tab-panel.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 1. 위치도 */
+        .loc-section {
+            padding: 70px 0;
+            background: #fff;
         }
 
         .sec-header {
-            margin-bottom: 60px;
+            margin-bottom: 48px;
         }
 
         .sh-eng {
             display: block;
-            font-size: 0.75rem;
-            letter-spacing: 0.25em;
+            font-size: 0.72rem;
+            letter-spacing: 0.22em;
             color: var(--prugio-gold);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             text-transform: uppercase;
         }
 
         .sh-title {
             font-family: var(--font-serif);
-            font-size: 2.2rem;
+            font-size: 2rem;
             color: var(--prugio-dark);
             font-weight: 700;
         }
 
         .sh-desc {
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: #666;
-            margin-top: 16px;
-            font-weight: 300;
+            margin-top: 12px;
             line-height: 1.7;
+            font-weight: 300;
         }
 
-        /* ===== MAP SECTION ===== */
-        .map-section {
-            background: var(--bg-gray);
-        }
-
-        .map-wrap {
-            height: 500px;
-            border-radius: 12px;
+        .map-frame {
+            border-radius: 10px;
             overflow: hidden;
-            margin-bottom: 32px;
+            height: 500px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.07);
         }
 
-        .map-wrap iframe {
+        .map-frame iframe {
             width: 100%;
             height: 100%;
             border: 0;
         }
 
-        .map-notice {
-            background: #fff3cd;
-            border-left: 4px solid var(--prugio-gold);
-            padding: 16px 20px;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            color: #666;
-            line-height: 1.6;
-        }
-
-        .map-tags {
+        .loc-tags {
             display: flex;
-            gap: 12px;
             flex-wrap: wrap;
-            margin-top: 24px;
+            gap: 10px;
+            margin-top: 28px;
         }
 
-        .map-tag {
-            padding: 8px 20px;
-            border: 1px solid #dcdcdc;
+        .loc-tag {
+            padding: 8px 18px;
+            border: 1px solid #dce0dc;
             border-radius: 50px;
-            font-size: 0.85rem;
-            color: #555;
-            background: #fff;
+            font-size: 0.83rem;
+            color: var(--prugio-dark);
             display: flex;
             align-items: center;
             gap: 6px;
-        }
-
-        .map-tag .dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: var(--prugio-gold);
-            flex-shrink: 0;
-        }
-
-        /* ===== PREMIUM FEATURES ===== */
-        .premium-section {
             background: #fff;
         }
 
-        .pr-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 80px;
-            margin-top: 60px;
-        }
-
-        .pr-item {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 70px;
-            align-items: center;
-        }
-
-        .pr-item.reverse {
-            grid-template-columns: 1fr 1.2fr;
-        }
-
-        .pr-item.reverse .pr-img-wrap {
-            order: 2;
-        }
-
-        .pr-item.reverse .pr-text {
-            order: 1;
-            padding-left: 0;
-        }
-
-        .pr-img-wrap {
-            overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
-        }
-
-        .pr-img-wrap img {
-            width: 100%;
-            height: 440px;
-            object-fit: cover;
-            transition: transform 1.5s ease;
-        }
-
-        .pr-item:hover .pr-img-wrap img {
-            transform: scale(1.04);
-        }
-
-        .pr-text {
-            padding-right: 40px;
-        }
-
-        .pr-num {
-            font-family: var(--font-serif);
-            font-size: 3.5rem;
+        .loc-tag::before {
+            content: '▸';
             color: var(--prugio-gold);
-            display: block;
-            margin-bottom: 8px;
-            opacity: 0.4;
+            font-size: 0.7rem;
         }
 
-        .pr-eng {
-            font-size: 0.75rem;
-            letter-spacing: 0.25em;
+        .loc-notice {
+            margin-top: 24px;
+            background: #f5f7f5;
+            border-left: 3px solid var(--prugio-gold);
+            padding: 14px 18px;
+            border-radius: 4px;
+            font-size: 0.82rem;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* 2. INFO GRID (공통) */
+        .env-section {
+            padding: 70px 0;
+        }
+
+        .env-section:nth-child(even) {
+            background: var(--bg-gray);
+        }
+
+        .env-hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: start;
+            margin-bottom: 56px;
+        }
+
+        .env-img {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .env-img img {
+            width: 100%;
+            height: 360px;
+            object-fit: cover;
+        }
+
+        .env-text {
+            padding-top: 8px;
+        }
+
+        .env-label {
+            font-size: 0.72rem;
+            letter-spacing: 0.22em;
             color: var(--prugio-gold);
             text-transform: uppercase;
-            margin-bottom: 20px;
+            margin-bottom: 14px;
             display: block;
         }
 
-        .pr-text h3 {
+        .env-title {
             font-family: var(--font-serif);
-            font-size: 1.9rem;
+            font-size: 1.7rem;
             color: var(--prugio-dark);
             font-weight: 700;
-            margin-bottom: 20px;
             line-height: 1.3;
+            margin-bottom: 16px;
         }
 
-        .pr-text p {
-            font-size: 1rem;
+        .env-subtitle {
+            font-size: 1.1rem;
+            color: var(--prugio-dark);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .env-desc {
+            font-size: 0.95rem;
             color: #555;
             line-height: 1.8;
             font-weight: 300;
+            margin-bottom: 24px;
         }
 
-        .pr-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 24px;
-        }
-
-        .pr-tag {
-            padding: 6px 14px;
-            background: var(--bg-gray);
-            border-radius: 4px;
-            font-size: 0.82rem;
-            color: var(--prugio-dark);
-            font-weight: 500;
-        }
-
-        .pr-divider {
-            width: 40px;
+        .env-divider {
+            width: 36px;
             height: 2px;
             background: var(--prugio-gold);
             margin: 20px 0;
         }
 
-        /* ===== DISCLAIMER ===== */
+        /* INFO CARDS Grid */
+        .info-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 16px;
+        }
+
+        .info-card {
+            background: #fff;
+            border: 1px solid #e8ebe8;
+            border-radius: 8px;
+            padding: 24px;
+            transition: box-shadow var(--tr), border-color var(--tr);
+        }
+
+        .info-card:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+            border-color: var(--prugio-gold);
+        }
+
+        .ic-icon {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+
+        .ic-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--prugio-dark);
+            margin-bottom: 6px;
+        }
+
+        .ic-desc {
+            font-size: 0.83rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* TABLE */
+        .env-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-size: 0.88rem;
+        }
+
+        .env-table th {
+            background: var(--prugio-dark);
+            color: #fff;
+            padding: 14px 16px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .env-table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid #eaeaea;
+            color: #444;
+        }
+
+        .env-table tr:hover td {
+            background: #f5f7f5;
+        }
+
+        .badge-green {
+            background: var(--prugio-dark);
+            color: var(--prugio-gold-light);
+            font-size: 0.72rem;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .badge-gray {
+            background: #666;
+            color: #fff;
+            font-size: 0.72rem;
+            padding: 3px 8px;
+            border-radius: 4px;
+        }
+
+        /* DISCLAIMER */
         .disclaimer {
             background: #f5f5f5;
-            padding: 40px 0;
+            padding: 36px 0;
             border-top: 1px solid #eaeaea;
         }
 
         .disclaimer p {
-            font-size: 0.82rem;
+            font-size: 0.8rem;
             color: #999;
             line-height: 1.7;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
 
-        /* ===== FOOTER ===== */
+        /* FOOTER */
         .footer {
             background: var(--prugio-deep);
-            padding: 50px 0;
-            color: rgba(255, 255, 255, 0.6);
+            padding: 48px 0;
         }
 
         .f-inner {
@@ -441,7 +543,7 @@
         }
 
         .f-links a {
-            font-size: 0.85rem;
+            font-size: 0.83rem;
             color: rgba(255, 255, 255, 0.5);
         }
 
@@ -450,77 +552,48 @@
         }
 
         .f-copy {
-            font-size: 0.8rem;
-            margin-top: 20px;
+            font-size: 0.78rem;
+            color: rgba(255, 255, 255, 0.4);
+            margin-top: 18px;
         }
 
-        /* ===== REVEAL ANIMATION ===== */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-        }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .reveal.d1 {
-            transition-delay: 0.1s;
-        }
-
-        .reveal.d2 {
-            transition-delay: 0.2s;
-        }
-
-        .reveal.d3 {
-            transition-delay: 0.3s;
-        }
-
-        /* ===== RESPONSIVE ===== */
         @media (max-width: 1024px) {
             .h-nav {
                 display: none;
             }
 
-            .pr-item,
-            .pr-item.reverse {
+            .env-hero {
                 grid-template-columns: 1fr;
                 gap: 32px;
             }
 
-            .pr-item.reverse .pr-img-wrap {
-                order: 1;
+            .env-img img {
+                height: 240px;
             }
 
-            .pr-item.reverse .pr-text {
-                order: 2;
-            }
-
-            .pr-text {
-                padding-right: 0;
-            }
-
-            .pr-img-wrap img {
-                height: 280px;
-            }
-
-            .sub-hero {
-                padding: 80px 24px 60px;
+            .tab-btn {
+                padding: 16px 16px;
+                font-size: 0.8rem;
             }
         }
 
         @media (max-width: 768px) {
             .container {
-                padding: 0 24px;
+                padding: 0 20px;
             }
 
-            .header {
-                padding: 0 24px;
+            .header,
+            .tab-nav {
+                padding-left: 20px;
+                padding-right: 20px;
             }
 
-            .h-back span {
+            .tab-btn {
+                padding: 14px 12px;
+                font-size: 0.75rem;
+            }
+
+            .tab-btn .tab-icon {
                 display: none;
             }
         }
@@ -529,7 +602,7 @@
 
 <body>
 
-    <!-- ===== HEADER ===== -->
+    <!-- HEADER -->
     <header class="header">
         <div class="h-logo">
             <span class="logo-prugio">PRUGIO</span>
@@ -540,224 +613,396 @@
             <a href="../index.html#types">평면정보</a>
             <a href="../index.html#features">프리미엄</a>
             <a href="../index.html#contact">분양안내</a>
-            <a href="environment.html" class="active">입지환경</a>
+            <a href="environment.html" class="active">입지여건</a>
         </nav>
-        <a href="../index.html" class="h-back">
-            ← <span>홈으로</span>
-        </a>
+        <a href="../index.html" class="h-back">← <span>홈으로</span></a>
     </header>
 
-    <!-- ===== SUB HERO ===== -->
+    <!-- SUB HERO -->
     <section class="sub-hero">
         <div class="sub-hero-content">
             <span class="sub-hero-eng">LOCATION &amp; ENVIRONMENT</span>
-            <h1>5가지 입지 프리미엄</h1>
-            <p>교통 · 교육 · 자연 · 생활 · 브랜드 — 모든 것이 완성된 곳</p>
+            <h1>■ 입지여건</h1>
+            <p>위치도 · 교통환경 · 생활편의환경 · 교육환경 · 개발환경</p>
             <div class="sub-breadcrumb">
                 <a href="../index.html">홈</a>
-                <span class="sep">›</span>
-                <span>입지환경</span>
+                <span>›</span>
+                <span>입지여건</span>
             </div>
         </div>
     </section>
 
-    <!-- ===== LOCATION MAP ===== -->
-    <section class="section map-section" id="map">
-        <div class="container">
-            <div class="sec-header reveal">
-                <span class="sh-eng">LOCATION MAP</span>
-                <h2 class="sh-title">사업지 위치</h2>
-                <p class="sh-desc">부산광역시 동래구 안락동 1230번지 일원 — 동해남부선 안락역 · 부산원동역 인접</p>
-            </div>
-
-            <div class="map-wrap reveal d1">
-                <iframe
-                    src="https://maps.google.com/maps?q=%EB%B6%80%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C+%EB%8F%99%EB%9E%98%EA%B5%AC+%EC%95%88%EB%9D%BD%EB%8F%991230&output=embed&z=15"
-                    allowfullscreen="" loading="lazy">
-                </iframe>
-            </div>
-
-            <div class="map-tags reveal d2">
-                <div class="map-tag"><span class="dot"></span> 안락역 (동해남부선) 도보권</div>
-                <div class="map-tag"><span class="dot"></span> 부산원동역 (동해남부선) 인접</div>
-                <div class="map-tag"><span class="dot"></span> 원동 IC 차량 5분</div>
-                <div class="map-tag"><span class="dot"></span> 충렬초·중·고 도보 5분</div>
-                <div class="map-tag"><span class="dot"></span> 온천천 시민공원 인접</div>
-            </div>
-
-            <div class="map-notice reveal d3">
-                ◆ 만덕~센텀 도시고속화도로(준공 2025.11.28) — 부산광역시청 바로가기 ›<br>
-                ※ 본 홈페이지의 내용과 지역도는 소비자의 이해를 돕기 위한 것으로, 개발 예정·계획 및 교통, 학교 계획 등에 관한 사항은 해당 기관의 자료를 토대로 제작되었습니다.
-            </div>
+    <!-- TAB NAVIGATION -->
+    <div class="tab-nav-wrap">
+        <div class="tab-nav">
+            <button class="tab-btn active" id="tab-loc" onclick="switchTab('loc')">
+                <span class="tab-icon">📍</span> 위치도
+            </button>
+            <button class="tab-btn" id="tab-traffic" onclick="switchTab('traffic')">
+                <span class="tab-icon">🚇</span> 교통환경
+            </button>
+            <button class="tab-btn" id="tab-life" onclick="switchTab('life')">
+                <span class="tab-icon">🏬</span> 생활편의환경
+            </button>
+            <button class="tab-btn" id="tab-edu" onclick="switchTab('edu')">
+                <span class="tab-icon">🎓</span> 교육환경
+            </button>
+            <button class="tab-btn" id="tab-dev" onclick="switchTab('dev')">
+                <span class="tab-icon">🏗️</span> 개발환경
+            </button>
         </div>
-    </section>
+    </div>
 
-    <!-- ===== 5 PREMIUM FEATURES ===== -->
-    <section class="section premium-section" id="premium">
-        <div class="container">
-            <div class="sec-header reveal">
-                <span class="sh-eng">PREMIUM</span>
-                <h2 class="sh-title">5대 입지 프리미엄</h2>
-                <p class="sh-desc">교통부터 브랜드까지, 동래 푸르지오 에듀포레가 누리는 5가지 특별한 가치</p>
+    <!-- ============================================================
+       TAB 1: 위치도
+       ============================================================ -->
+    <div class="tab-panel active" id="panel-loc">
+        <section class="loc-section">
+            <div class="container">
+                <div class="sec-header">
+                    <span class="sh-eng">LOCATION MAP</span>
+                    <h2 class="sh-title">위치도</h2>
+                    <p class="sh-desc">부산광역시 동래구 안락동 1230번지 일원 — 동해남부선 안락역·부산원동역 인접</p>
+                </div>
+                <div class="map-frame">
+                    <iframe
+                        src="https://maps.google.com/maps?q=%EB%B6%80%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C+%EB%8F%99%EB%9E%98%EA%B5%AC+%EC%95%88%EB%9D%BD%EB%8F%991230&output=embed&z=15"
+                        allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <div class="loc-tags">
+                    <span class="loc-tag">동해남부선 안락역 도보권</span>
+                    <span class="loc-tag">부산원동역 인접</span>
+                    <span class="loc-tag">원동 IC 차량 5분</span>
+                    <span class="loc-tag">만덕~센텀 도시고속화도로(2025.11 준공)</span>
+                    <span class="loc-tag">충렬초·중·고 도보 5분</span>
+                    <span class="loc-tag">온천천 시민공원 인접</span>
+                </div>
+                <div class="loc-notice">
+                    ◆ 만덕~센텀 도시고속화도로(준공 2025.11.28) — 부산광역시청 바로가기 ›<br>
+                    ※ 지역도는 소비자의 이해를 돕기 위한 참고 자료이며, 관련 기관의 자료를 토대로 제작되었습니다.
+                </div>
             </div>
+        </section>
+    </div>
 
-            <div class="pr-grid">
-
-                <!-- 01. TRAFFIC -->
-                <div class="pr-item reveal">
-                    <div class="pr-img-wrap">
-                        <img src="../images/premium-01.jpg" alt="쾌속 교통 — 원동 IC, 동해남부선">
+    <!-- ============================================================
+       TAB 2: 교통환경
+       ============================================================ -->
+    <div class="tab-panel" id="panel-traffic">
+        <section class="env-section">
+            <div class="container">
+                <div class="env-hero">
+                    <div class="env-img">
+                        <img src="../images/premium-01.jpg" alt="교통환경 — 원동 IC, 동해남부선">
                     </div>
-                    <div class="pr-text">
-                        <span class="pr-num">01</span>
-                        <span class="pr-eng">TRAFFIC</span>
-                        <h3>어디든 빠르게 통하는<br>쾌속 교통</h3>
-                        <div class="pr-divider"></div>
-                        <p>원동 IC와 동해남부선(안락역·부산원동역)을 통해 도심 내외로 이동이 빠른 사통팔달 광역 교통망을 자랑합니다. 또한 만덕~센텀 도시고속화도로(2025.11 준공)로
-                            부산 도심 접근성이 한층 강화됩니다.</p>
-                        <div class="pr-tags">
-                            <span class="pr-tag">안락역 도보권</span>
-                            <span class="pr-tag">원동 IC 5분</span>
-                            <span class="pr-tag">만덕~센텀 고속화도로</span>
-                        </div>
+                    <div class="env-text">
+                        <span class="env-label">TRAFFIC</span>
+                        <h2 class="env-title">사통팔달 교통환경</h2>
+                        <div class="env-divider"></div>
+                        <p class="env-subtitle">주요 생활권역 약 30분 내 자차 이동 가능</p>
+                        <p class="env-desc">원동 IC, 동해남부선을 통해 시내외 이동이 용이한 광역 교통망을 갖추고 있습니다. 도보 약 15분 내 4호선·동해남부선 이용이
+                            가능하며, 교통의 허브 역할을 합니다.</p>
+                        <p class="env-subtitle">만덕~센텀 도시고속화도로 (2025.11 준공)</p>
+                        <p class="env-desc">만덕~센텀을 잇는 도시고속화도로가 2025년 11월 개통되어 도심 접근성이 더욱 향상됩니다.</p>
                     </div>
                 </div>
-
-                <!-- 02. EDUCATION -->
-                <div class="pr-item reverse reveal d1">
-                    <div class="pr-img-wrap">
-                        <img src="../images/premium-02.jpg" alt="안심 학세권 — 충렬초·중·고">
+                <div class="info-cards">
+                    <div class="info-card">
+                        <div class="ic-icon">🚇</div>
+                        <div class="ic-title">동해남부선 안락역</div>
+                        <div class="ic-desc">사업지에서 도보 약 12분 (860m) 거리에 위치</div>
                     </div>
-                    <div class="pr-text">
-                        <span class="pr-num">02</span>
-                        <span class="pr-eng">EDUCATION</span>
-                        <h3>걸어서 누리는<br>안심 학세권</h3>
-                        <div class="pr-divider"></div>
-                        <p>단지와 맞닿은 충렬초를 비롯해 반경 0.5km 내 초·중·고교 8개가 밀집되어 있습니다. 자녀가 도보 5분 이내로 등하교할 수 있는 대한민국 최고의 교육 환경입니다.
+                    <div class="info-card">
+                        <div class="ic-icon">🚇</div>
+                        <div class="ic-title">동해남부선 부산원동역</div>
+                        <div class="ic-desc">도보 약 15분 (940m) 거리, 부산 주요 역 직결</div>
+                    </div>
+                    <div class="info-card">
+                        <div class="ic-icon">🚌</div>
+                        <div class="ic-title">도시철도 4호선</div>
+                        <div class="ic-desc">수안역·낙민역·명장역 이용으로 부산 도심 연결</div>
+                    </div>
+                    <div class="info-card">
+                        <div class="ic-icon">🛣️</div>
+                        <div class="ic-title">원동 IC</div>
+                        <div class="ic-desc">동해고속도로 원동 IC로 광역 교통망 직접 연결</div>
+                    </div>
+                    <div class="info-card">
+                        <div class="ic-icon">🚗</div>
+                        <div class="ic-title">만덕~센텀 고속화도로</div>
+                        <div class="ic-desc">2025년 11월 준공. 부산 도심~해운대 이동 시간 단축</div>
+                    </div>
+                    <div class="info-card">
+                        <div class="ic-icon">🎯</div>
+                        <div class="ic-title">주요 생활권역 30분</div>
+                        <div class="ic-desc">해운대, 센텀시티, 동래, 서면 등 자차 30분 거리</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ============================================================
+       TAB 3: 생활편의환경
+       ============================================================ -->
+    <div class="tab-panel" id="panel-life">
+        <section class="env-section">
+            <div class="container">
+                <div class="env-hero">
+                    <div class="env-img">
+                        <img src="../images/premium-04.jpg" alt="생활편의환경 — 이마트 트레이더스, 코스트코">
+                    </div>
+                    <div class="env-text">
+                        <span class="env-label">LIVING CONVENIENCE</span>
+                        <h2 class="env-title">쾌적한 생활권</h2>
+                        <div class="env-divider"></div>
+                        <p class="env-subtitle">모든 인프라를 담은 쾌적한 생활권</p>
+                        <p class="env-desc">온천천 시민공원, 수영강 시민공원, 명장공원 등 쾌적한 도심 속 숲세권을 누립니다. 온천천 카페거리, 동래역·연산역 중심상권 등 편리한
+                            생활 인프라가 집 앞에 펼쳐집니다.</p>
+                        <p class="env-subtitle">여유로운 생활 인프라</p>
+                        <p class="env-desc">홈플러스, 봉생병원, 이마트 트레이더스, 코스트코 등 다양한 생활 인프라와 자연을 곁에 둔 웰빙라이프를 즐길 수 있습니다.</p>
+                    </div>
+                </div>
+                <div class="info-cards">
+                    <div class="info-card">
+                        <div class="ic-icon">🛒</div>
+                        <div class="ic-title">이마트 트레이더스</div>
+                        <div class="ic-desc">대용량 쇼핑몰, 차량 10분 내 위치</div>
+                    </div>
+                    <div class="info-card">
+                        <div class="ic-icon">🛒</div>
+                        <div class="ic-title">홈플러스</div>
+                        <div class="ic-desc">대형 마트 및 문화센터 복합 시설</div>
+                    </div>
+                    <div class="info-card">
+                        <div class="ic-icon">🛒</div>
+                        <div class="ic-title">코스트코</div>
+                        <div class="ic-desc">회원제 창고형 매장, 인접 입지</div>
+                    </div>
+                    <div class="info-card">
+                        <div class="ic-icon">🏥</div>
+                        <div class="ic-title">동래봉생병원</div>
+                        <div class="ic-desc">지역 거점 종합병원, 응급의료 가능</div>
+                    </div>
+                    <div class="info-card">
+                        <div class="ic-icon">🌿</div>
+                        <div class="ic-title">온천천 시민공원</div>
+                        <div class="ic-desc">도심 속 산책·레저·휴식 공간, 도보 인접</div>
+                    </div>
+                    <div class="info-card">
+                        <div class="ic-icon">🌊</div>
+                        <div class="ic-title">수영강 시민공원</div>
+                        <div class="ic-desc">넓은 수변공원, 자전거·조깅 등 레저 활동</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ============================================================
+       TAB 4: 교육환경
+       ============================================================ -->
+    <div class="tab-panel" id="panel-edu">
+        <section class="env-section">
+            <div class="container">
+                <div class="env-hero">
+                    <div class="env-img">
+                        <img src="../images/premium-02.jpg" alt="교육환경 — 충렬초·중·고, 혜화여중·고">
+                    </div>
+                    <div class="env-text">
+                        <span class="env-label">EDUCATION</span>
+                        <h2 class="env-title">자녀교육 걱정이 사라지는<br>초·중·고 안심 학세권</h2>
+                        <div class="env-divider"></div>
+                        <p class="env-subtitle">우수한 교육환경 — '우리아이' 안심통학</p>
+                        <p class="env-desc">사업지 반경 0.5km 이내에 초·중·고 8개 학교가 위치하고 있습니다. 도보 5분 이내 통학이 가능하여 자녀의 안전한 등하교를
+                            보장합니다.</p>
+                        <p class="env-desc">충렬초를 비롯해 충렬중·고, 혜화초, 혜화여중·고, 반안초, 안락초, 금정고, 명동초 등 우수한 교육 환경이 단지를 둘러싸고 있습니다.
                         </p>
-                        <div class="pr-tags">
-                            <span class="pr-tag">충렬초 도보 3분</span>
-                            <span class="pr-tag">충렬중·고</span>
-                            <span class="pr-tag">혜화초·여중·고</span>
-                            <span class="pr-tag">반경 0.5km 8개교</span>
-                        </div>
                     </div>
                 </div>
-
-                <!-- 03. NATURE -->
-                <div class="pr-item reveal d2">
-                    <div class="pr-img-wrap">
-                        <img src="../images/premium-03.jpg" alt="웰빙라이프 — 온천천, 수영강 시민공원">
+                <div class="info-cards">
+                    <div class="info-card">
+                        <div class="ic-icon">🏫</div>
+                        <div class="ic-title">충렬초등학교</div>
+                        <div class="ic-desc">단지와 가장 가까운 배정 학교, 도보 3분</div>
                     </div>
-                    <div class="pr-text">
-                        <span class="pr-num">03</span>
-                        <span class="pr-eng">NATURE</span>
-                        <h3>자연을 곁에 둔<br>웰빙라이프</h3>
-                        <div class="pr-divider"></div>
-                        <p>온천천 시민공원, 수영강 시민공원, 명장공원(조성예정)이 연계됩니다. 단지 전체 면적의 36.9%를 조경으로 채운 에코 힐링 대단지에서 일상 속 산책과 레저, 휴식을
-                            온전히 즐길 수 있습니다.</p>
-                        <div class="pr-tags">
-                            <span class="pr-tag">온천천 시민공원</span>
-                            <span class="pr-tag">수영강 시민공원</span>
-                            <span class="pr-tag">조경률 36.9%</span>
-                        </div>
+                    <div class="info-card">
+                        <div class="ic-icon">🏫</div>
+                        <div class="ic-title">충렬중학교 · 충렬고등학교</div>
+                        <div class="ic-desc">초·중·고 연계 학군, 도보권 우수 학교</div>
                     </div>
-                </div>
-
-                <!-- 04. CONVENIENCE -->
-                <div class="pr-item reverse reveal">
-                    <div class="pr-img-wrap">
-                        <img src="../images/premium-04.jpg" alt="생활 인프라 — 이마트 트레이더스, 코스트코">
+                    <div class="info-card">
+                        <div class="ic-icon">🏫</div>
+                        <div class="ic-title">혜화초등학교</div>
+                        <div class="ic-desc">반경 0.5km 내 위치, 도보 통학 가능</div>
                     </div>
-                    <div class="pr-text">
-                        <span class="pr-num">04</span>
-                        <span class="pr-eng">CONVENIENCE</span>
-                        <h3>일상이 여유로운<br>생활 인프라</h3>
-                        <div class="pr-divider"></div>
-                        <p>이마트 트레이더스, 홈플러스, 코스트코 등 대형 쇼핑 시설과 서원시장이 차량 10분 내 위치합니다. 동래봉생병원, 대동병원 등 종합 의료시설도 인접하여 가족 모두의
-                            일상을 안심으로 채웁니다.</p>
-                        <div class="pr-tags">
-                            <span class="pr-tag">이마트 트레이더스</span>
-                            <span class="pr-tag">코스트코</span>
-                            <span class="pr-tag">동래봉생병원</span>
-                            <span class="pr-tag">대동병원</span>
-                        </div>
+                    <div class="info-card">
+                        <div class="ic-icon">🏫</div>
+                        <div class="ic-title">혜화여자중학교 · 혜화여자고등학교</div>
+                        <div class="ic-desc">여자 중·고 연계, 단지 인접</div>
+                    </div>
+                    <div class="info-card">
+                        <div class="ic-icon">🏫</div>
+                        <div class="ic-title">반안초 · 안락초 · 안남초</div>
+                        <div class="ic-desc">다양한 초등학교 선택 가능, 인접 위치</div>
+                    </div>
+                    <div class="info-card">
+                        <div class="ic-icon">📊</div>
+                        <div class="ic-title">0.5km 내 8개교</div>
+                        <div class="ic-desc">반경 0.5km 이내 초·중·고교 8개 집중 밀집</div>
                     </div>
                 </div>
-
-                <!-- 05. BRAND & COMMUNITY -->
-                <div class="pr-item reveal d1">
-                    <div class="pr-img-wrap">
-                        <img src="../images/premium-05.jpg" alt="푸르지오 브랜드 대단지 & 하이엔드 커뮤니티">
-                    </div>
-                    <div class="pr-text">
-                        <span class="pr-num">05</span>
-                        <span class="pr-eng">BRAND &amp; COMMUNITY</span>
-                        <h3>푸르지오 브랜드 대단지<br>&amp; 하이엔드 커뮤니티</h3>
-                        <div class="pr-divider"></div>
-                        <p>총 1,481세대 동래의 새로운 랜드마크. 대우건설 푸르지오 브랜드의 품격에 걸맞은 하이엔드 커뮤니티 시설이 제공됩니다.</p>
-                        <div class="pr-tags">
-                            <span class="pr-tag">사우나</span>
-                            <span class="pr-tag">스크린골프</span>
-                            <span class="pr-tag">키즈카페</span>
-                            <span class="pr-tag">공유오피스</span>
-                            <span class="pr-tag">전 세대 개별창고</span>
-                        </div>
-                    </div>
-                </div>
-
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
-    <!-- ===== CTA ===== -->
-    <section style="background: var(--prugio-dark); padding: 80px 0; text-align: center;">
+    <!-- ============================================================
+       TAB 5: 개발환경
+       ============================================================ -->
+    <div class="tab-panel" id="panel-dev">
+        <section class="env-section">
+            <div class="container">
+                <div class="env-hero">
+                    <div class="env-img">
+                        <img src="../images/premium-05.jpg" alt="개발환경 — 주변 재개발·재건축">
+                    </div>
+                    <div class="env-text">
+                        <span class="env-label">DEVELOPMENT</span>
+                        <h2 class="env-title">새로운 주거타운 형성의 선두,<br>미래가치 급등 개발환경</h2>
+                        <div class="env-divider"></div>
+                        <p class="env-subtitle">주거 생활환경 개선으로 인구 유입 및 신(新) 주거타운 형성</p>
+                        <p class="env-desc">사업지 주변 8개 구역, 약 15,000세대 개발이 기대됩니다. 재개발·재건축·민간특례사업이 동시 다발적으로 추진 중이며, 동래 푸르지오
+                            에듀포레가 그 중심에 위치합니다.</p>
+                    </div>
+                </div>
+
+                <h3
+                    style="font-family: var(--font-serif); font-size: 1.3rem; color: var(--prugio-dark); margin-bottom: 20px;">
+                    주변 개발 사업 현황 (25년 11월 기준)</h3>
+                <table class="env-table">
+                    <thead>
+                        <tr>
+                            <th>구분</th>
+                            <th>구역명</th>
+                            <th>건립 예정 세대</th>
+                            <th>추진 현황</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="badge-green">재개발</span></td>
+                            <td>명안A구역</td>
+                            <td>약 2,000세대</td>
+                            <td>25.03.04 사전타당성 접수</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge-green">재개발</span></td>
+                            <td>명장5구역</td>
+                            <td>2,224세대</td>
+                            <td>25.11.05 추진위원회 구성</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge-green">재개발</span></td>
+                            <td>안락1구역</td>
+                            <td>1,693세대</td>
+                            <td>25.11.05 추진위원회 구성</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge-green">재개발</span></td>
+                            <td>복산1구역</td>
+                            <td>4,851세대</td>
+                            <td>25.03.06 사업시행인가</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge-gray">재건축</span></td>
+                            <td>명장3구역</td>
+                            <td>447세대</td>
+                            <td>25.07.25 조합설립인가</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge-gray">재건축</span></td>
+                            <td>낙민1구역</td>
+                            <td>1,275세대</td>
+                            <td>24.02.23 추진위원회 구성</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge-gray">민간특례</span></td>
+                            <td>명장공원 1BL</td>
+                            <td>857세대</td>
+                            <td>시공사 변경 (효성중공업) ※年內 분양예정</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge-gray">민간특례</span></td>
+                            <td>명장공원 2BL</td>
+                            <td>792세대</td>
+                            <td>추진 중</td>
+                        </tr>
+                        <tr style="background: #f5f7f5; font-weight: 700;">
+                            <td colspan="2"><strong>합 계</strong></td>
+                            <td><strong>약 14,139세대</strong></td>
+                            <td>8개 구역 동시 추진</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="font-size: 0.78rem; color: #999; margin-top: 12px;">※ 출처: 부산광역시 정비사업통합홈페이지 / 25년 11월 15일 기준.
+                    사업 계획은 변경될 수 있습니다.</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- CTA -->
+    <section style="background: var(--prugio-dark); padding: 70px 0; text-align: center;">
         <div class="container">
-            <p style="font-size: 0.85rem; letter-spacing: 0.2em; color: var(--prugio-gold); margin-bottom: 16px;">
-                CONTACT</p>
+            <p style="font-size: 0.8rem; letter-spacing: 0.2em; color: var(--prugio-gold); margin-bottom: 14px;">CONTACT
+            </p>
             <h2
-                style="font-family: var(--font-serif); font-size: 2rem; color: #fff; font-weight: 700; margin-bottom: 24px;">
+                style="font-family: var(--font-serif); font-size: 1.8rem; color: #fff; font-weight: 700; margin-bottom: 22px;">
                 입지에 대한 궁금한 사항은<br>지금 바로 상담하세요</h2>
             <a href="../index.html#contact"
-                style="display: inline-block; padding: 18px 60px; background: var(--prugio-gold); color: #fff; font-weight: 700; border-radius: 4px; font-size: 1rem;">관심고객
+                style="display: inline-block; padding: 16px 56px; background: var(--prugio-gold); color: #fff; font-weight: 700; border-radius: 4px; font-size: 0.95rem;">관심고객
                 등록하기</a>
         </div>
     </section>
 
-    <!-- ===== DISCLAIMER ===== -->
-    <section class="disclaimer">
+    <!-- DISCLAIMER -->
+    <div class="disclaimer">
         <div class="container">
             <p>※ 본 홈페이지의 내용과 지역도는 소비자의 이해를 돕기 위한 것으로, 개발 예정·계획 및 교통, 학교 계획 등에 관한 사항은 해당 기관의 자료를 토대로 제작되었습니다.</p>
-            <p>※ 사업 계획 및 일정은 개발계획별 사업주체에 의해 변경될 수 있으며, 동래 푸르지오 에듀포레 사업주체 및 시공사와 무관합니다.</p>
+            <p>※ 사업 계획 및 일정은 개발계획별 사업주체에 의해 변경될 수 있으며, 시공사와 무관합니다.</p>
         </div>
-    </section>
+    </div>
 
-    <!-- ===== FOOTER ===== -->
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
             <div class="f-inner">
                 <span class="f-logo">PRUGIO</span>
                 <div class="f-links">
                     <a href="#">개인정보처리방침</a>
-                    <a href="#">이용약관</a>
                     <a href="../index.html">홈으로</a>
                 </div>
             </div>
-            <p class="f-copy">시공 : 대우건설(주) &nbsp;|&nbsp; 현장 : 부산광역시 동래구 안락동 1230번지 일원</p>
-            <p class="f-copy" style="margin-top: 8px;">CopyrightⓒDAEWOO ENGINEERING &amp; CONSTRUCTION CO., LTD. All
+            <p class="f-copy">시공 : 대우건설(주) &nbsp;|&nbsp; 부산광역시 동래구 안락동 1230번지 일원</p>
+            <p class="f-copy" style="margin-top: 6px;">CopyrightⓒDAEWOO ENGINEERING &amp; CONSTRUCTION CO., LTD. All
                 rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        // Reveal animation on scroll
-        const reveals = document.querySelectorAll('.reveal');
-        const obs = new IntersectionObserver((entries) => {
-            entries.forEach(e => {
-                if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
-            });
-        }, { threshold: 0.12 });
-        reveals.forEach(el => obs.observe(el));
+        function switchTab(tab) {
+            // Buttons
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById('tab-' + tab).classList.add('active');
+            // Panels
+            document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+            document.getElementById('panel-' + tab).classList.add('active');
+            // Scroll to top of content area
+            document.querySelector('.tab-nav-wrap').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        // Handle URL hash for direct tab access e.g. environment.html#traffic
+        const hash = location.hash.replace('#', '');
+        if (['loc', 'traffic', 'life', 'edu', 'dev'].includes(hash)) switchTab(hash);
     </script>
 
 </body>
